@@ -8,258 +8,258 @@ In addition, the names are not case sensitive.
 \[#Ethylene\]  	
 CC
 
-\[#Propylene\]  	
+\[#Propylene\]  
 CC(C)
 
-\[#EthyleneGlycol\]  	
+\[#EthyleneGlycol\]  
 CCO
 
-\[#cis-1,4-Isoprene\]  	
+\[#cis-1,4-Isoprene\]  
 C\\C=C(C)/C
 
-\[#trans-1,4-Isoprene\]  	
+\[#trans-1,4-Isoprene\]  
 C/C=C(C)/C
 
-\[#3,4-Isoprene\]  	
+\[#3,4-Isoprene\]  
 CC(C(C)=C)
 
-\[#Styrene\]  	
+\[#Styrene\]  
 CC(c1ccccc1)
 
-\[#VinylAlcohol\]  	
+\[#VinylAlcohol\]  
 CC(O)
 
-\[#VinylAcetate\]  	
+\[#VinylAcetate\]  
 CC(OC(=O)C)
 
-\[#LacticAcid\]  	
+\[#LacticAcid\]  
 OC(C)C(=O)
 
-\[#Nylon-6,6\]  	
+\[#Nylon-6,6\]  
 C(=O)CCCCC(=O)NCCCCCCN
 
-\[#1,4-Butadiene\]  	
+\[#1,4-Butadiene\]  
 CC=CC
 
-\[#cis-1,4-Butadiene\]  	
+\[#cis-1,4-Butadiene\]  
 C\\C=C/C
 
-\[#trans-1,4-Butadiene\]  	
+\[#trans-1,4-Butadiene\]  
 C/C=C/C
 
-\[#Chloroprene\]  	
+\[#Chloroprene\]  
 CC(Cl)=CC
 
-\[#VinylChloride\]  	
+\[#VinylChloride\]  
 CC(Cl)
 
-\[#Tetrafluoroethylene\]  	
+\[#Tetrafluoroethylene\]  
 C(F)(F)C(F)(F)
 
-\[#VinylideneFluoride\]  	
+\[#VinylideneFluoride\]  
 CC(F)(F)
 
-\[#MethylMethacrylate\]  	
+\[#MethylMethacrylate\]  
 CC(C)(C(=O)OC)
 
-\[#MethylAcrylate\]  	
+\[#MethylAcrylate\]  
 CC(C(=O)OC)
 
-\[#MethacrylicAcid\]  	
+\[#MethacrylicAcid\]  
 CC(C)(C(=O)O)
 
-\[#AcrylicAcid\]  	
+\[#AcrylicAcid\]  
 CC(C(=O)O)
 
-\[#Methacrylate\]  	
-CC(C)(C(=O)\[O-\]  )
+\[#Methacrylate\]  
+CC(C)(C(=O)\[O-\])
 
-\[#Acrylate\]  	
-CC(C(=O)\[O-\]  )
+\[#Acrylate\]  
+CC(C(=O)\[O-\])
 
-\[#ButylAcrylate\]  	
+\[#ButylAcrylate\]  
 CC(C(=O)OCCCC)
 
-\[#EthylAcrylate\]  	
+\[#EthylAcrylate\]  
 CC(C(=O)OCC)
 
-\[#2-EthylhexylAcrylate\]  	
+\[#2-EthylhexylAcrylate\]  
 CC(C(=O)OCC(CC)CCCC)
 
-\[#Acrylamide\]  	
+\[#Acrylamide\]  
 CC(C(=O)N)
 
-\[#Acrylonitrile\]  	
+\[#Acrylonitrile\]  
 CC(C#N)
 
-\[#N-Isopropylacrylamide\]  	
+\[#N-Isopropylacrylamide\]  
 CC(C(=O)NC(C)C)
 
-\[#Dimethylacrylamide\]  	
+\[#Dimethylacrylamide\]  
 CC(C(=O)N(C)C)
 
-\[#4-Chlorostyrene\]  	
+\[#4-Chlorostyrene\]  
 CC(c1ccc(Cl)cc1)
 
-\[#2-Chlorostyrene\]  	
+\[#2-Chlorostyrene\]  
 CC(c1c(Cl)cccc1)
 
-\[#4-Chloromethylstyrene\]  	
+\[#4-Chloromethylstyrene\]  
 CC(c1ccc(CCl)cc1)
 
-\[#4-StyrenesulfonicAcid\]  	
+\[#4-StyrenesulfonicAcid\]  
 CC(c1ccc(S(=O)(=O)O)cc1)
 
-\[#StyreneSulfonate\]  	
-CC(c1ccc(S(=O)(=O)\[O-\]  )cc1)
+\[#StyreneSulfonate\]  
+CC(c1ccc(S(=O)(=O)\[O-\])cc1)
 
-\[#4-Vinylpyridine\]  	
+\[#4-Vinylpyridine\]  
 CC(c1ccncc1)
 
-\[#2-Vinylpyridine\]  	
+\[#2-Vinylpyridine\]  
 CC(c1ncccc1)
 
-\[#PropyleneGlycol\]  	
+\[#PropyleneGlycol\]  
 CC(C)O
 
-\[#GlycolicAcid\]  	
+\[#GlycolicAcid\]  
 OCC(=O)
 
-\[#TerephthalicAcid\]  	
+\[#TerephthalicAcid\]  
 C(=O)c(cc1)ccc1C(=O)
 
-\[#e-Caprolactaone\]   (ε-Caprolactaone)	
+\[#e-Caprolactaone\] (ε-Caprolactaone)  
 OCCCCCC(=O)
 
-\[#e-Caprolactam\]   (ε-Caprolactam)	
+\[#e-Caprolactam\] (ε-Caprolactam)  
 NCCCCCC(=O)
 
-\[#(R)-3-Hydroxybutyrate\]  	
-O\[C@H\]  (C)CC(=O)
+\[#(R)-3-Hydroxybutyrate\]  
+O\[C@H\](C)CC(=O)
 
-\[#Alanine\]  , \[#Ala\]  	
-N\[C@@H\]  (C)C(=O)
+\[#Alanine\], \[#Ala\]  
+N\[C@@H\](C)C(=O)
 
-\[#Arginine\]  , \[#Arg\]  	
-N\[C@@H\]  (CCCNC(=N)N)C(=O)
+\[#Arginine\], \[#Arg\]  
+N\[C@@H\](CCCNC(=N)N)C(=O)
 
-\[#Asparagine\]  , \[#Asn\]  
-N\[C@@H\]  (CC(=O)N)C(=O)
+\[#Asparagine\], \[#Asn\]  
+N\[C@@H\](CC(=O)N)C(=O)
 
-\[#AsparticAcid\]  , \[#Asp\]  
-N\[C@@H\]  (CC(=O)O)C(=O)
+\[#AsparticAcid\], \[#Asp\]  
+N\[C@@H\](CC(=O)O)C(=O)
 
-\[#Cysteine\]  , \[#Cys\]  	
-N\[C@@H\]  (CS)C(=O)
+\[#Cysteine\], \[#Cys\]  
+N\[C@@H\](CS)C(=O)
 
-\[#Glutamine\]  , \[#Gln\]  	
-N\[C@@H\]  (CCC(=O)N)C(=O)
+\[#Glutamine\], \[#Gln\]  
+N\[C@@H\](CCC(=O)N)C(=O)
 
-\[#GlutamicAcid\]  , \[#Glu\]  	
-N\[C@@H\]  (CCC(=O)O)C(=O)
+\[#GlutamicAcid\], \[#Glu\]  
+N\[C@@H\](CCC(=O)O)C(=O)
 
-\[#Glycine\]  , \[#Gly\]  	
+\[#Glycine\], \[#Gly\]  
 NCC(=O)
 
-\[#Histidine\]  , \[#His\]  	
-N\[C@@H\]  (Cc1ncnc1)C(=O)
+\[#Histidine\], \[#His\]  
+N\[C@@H\](Cc1ncnc1)C(=O)
 
-\[#Isoleucine\]  , \[#Ile\]  	
-N\[C@@H\]  (\[C@@H\]  (C)CC)C(=O)
+\[#Isoleucine\], \[#Ile\]  
+N\[C@@H\](\[C@@H\]  (C)CC)C(=O)
 
-\[#Leucine\]  , \[#Leu\]  	
-N\[C@@H\]  (CC(C)C)C(=O)
+\[#Leucine\], \[#Leu\]  
+N\[C@@H\](CC(C)C)C(=O)
 
-\[#Lysine\]  , \[#Lys\]  	
-N\[C@@H\]  (CCCCN)C(=O)
+\[#Lysine\], \[#Lys\]  
+N\[C@@H\](CCCCN)C(=O)
 
-\[#Methionine\]  , \[#Met\]  	
-N\[C@@H\]  (CCSC)C(=O)
+\[#Methionine\], \[#Met\]  
+N\[C@@H\](CCSC)C(=O)
 
-\[#Phenylalanine\]  , \[#Phe\]  	
-N\[C@@H\]  (Cc1ccccc1)C(=O)
+\[#Phenylalanine\], \[#Phe\]  
+N\[C@@H\](Cc1ccccc1)C(=O)
 
-\[#Proline\]  , \[#Pro\]  	
-N1\[C@@H\]  (CCC1)C(=O)
+\[#Proline\], \[#Pro\]  
+N1\[C@@H\](CCC1)C(=O)
 
-\[#Serine\]  , \[#Ser\]  	
-N\[C@@H\]  (CO)C(=O)
+\[#Serine\], \[#Ser\]  
+N\[C@@H\](CO)C(=O)
 
-\[#Threonine\]  , \[#Thr\]  	
-N\[C@@H\]  (\[C@H\]  (O)C)C(=O)
+\[#Threonine\], \[#Thr\]  
+N\[C@@H\](\[C@H\](O)C)C(=O)
 
-\[#Tryptophan\]  , \[#Trp\]  	
-N\[C@@H\]  (Cc1cnc2c1cccc2)C(=O)
+\[#Tryptophan\], \[#Trp\]  
+N\[C@@H\](Cc1cnc2c1cccc2)C(=O)
 
-\[#Tyrosine\]  , \[#Tyr\]  	
-N\[C@@H\]  (Cc1ccc(O)cc1)C(=O)
+\[#Tyrosine\], \[#Tyr\]  
+N\[C@@H\](Cc1ccc(O)cc1)C(=O)
 
-\[#Valine\]  , \[#Val\]  	
-N\[C@@H\]  (C(C)C)C(=O)
+\[#Valine\], \[#Val\]  
+N\[C@@H\](C(C)C)C(=O)
 
-\[#DeoxyadenosineMonophosphate\]  	
-P(=O)(O)OC\[C@H\]  1O\[C@@H\]  (N1C=NC2=C1N=CNC2N)C\[C@@H\]  1O
+\[#DeoxyadenosineMonophosphate\]  
+P(=O)(O)OC\[C@H\]1O\[C@@H\](N1C=NC2=C1N=CNC2N)C\[C@@H\]1O
 
-\[#DeoxycytidineMonophosphate\]  	
-P(=O)(O)OC\[C@H\]  1O\[C@@H\]  (N1C=CC(N)=NC1=O)C\[C@@H\]  1O
+\[#DeoxycytidineMonophosphate\]  
+P(=O)(O)OC\[C@H\]1O\[C@@H\](N1C=CC(N)=NC1=O)C\[C@@H\]1O
 
-\[#DeoxyguanosineMonophosphate\]  	
-P(=O)(O)OC\[C@H\]  1O\[C@@H\]  (N1C=NC2=C1N=C(N)NC2=O)C\[C@@H\]  1O
+\[#DeoxyguanosineMonophosphate\]  
+P(=O)(O)OC\[C@H\]1O\[C@@H\](N1C=NC2=C1N=C(N)NC2=O)C\[C@@H\]1O
 
-\[#DeoxythymidineMonophosphate\]  	
-P(=O)(O)OC\[C@H\]  1O\[C@@H\]  (N1C=C(C)C(=O)NC1=O)C\[C@@H\]  1O
+\[#DeoxythymidineMonophosphate\]  
+P(=O)(O)OC\[C@H\]1O\[C@@H\](N1C=C(C)C(=O)NC1=O)C\[C@@H\]1O
 
-\[#AdenosineMonophosphate\]  	
-P(=O)(O)OC\[C@H\]  1O\[C@@H\]  (N1C=NC2=C1N=CNC2N)\[C@H\]  (O)\[C@@H\]  1O
+\[#AdenosineMonophosphate\]  
+P(=O)(O)OC\[C@H\]1O\[C@@H\](N1C=NC2=C1N=CNC2N)\[C@H\](O)\[C@@H\]1O
 
-\[#CytidineMonophosphate\]  	
-P(=O)(O)OC\[C@H\]  1O\[C@@H\]  (N1C=CC(N)=NC1=O)\[C@H\]  (O)\[C@@H\]  1O
+\[#CytidineMonophosphate\]  
+P(=O)(O)OC\[C@H\]1O\[C@@H\](N1C=CC(N)=NC1=O)\[C@H\](O)\[C@@H\]1O
 
-\[#GuanosineMonophosphate\]  	
-P(=O)(O)OC\[C@H\]  1O\[C@@H\]  (N1C=NC2=C1N=C(N)NC2=O)\[C@H\]  (O)\[C@@H\]  1O
+\[#GuanosineMonophosphate\]  
+P(=O)(O)OC\[C@H\]1O\[C@@H\](N1C=NC2=C1N=C(N)NC2=O)\[C@H\](O)\[C@@H\]1O
 
-\[#UridineMonophosphate\]  	
-P(=O)(O)OC\[C@H\]  1O\[C@@H\]  (N1C=CC(=O)NC1=O)\[C@H\]  (O)\[C@@H\]  1O
+\[#UridineMonophosphate\]  
+P(=O)(O)OC\[C@H\]1O\[C@@H\](N1C=CC(=O)NC1=O)\[C@H\](O)\[C@@H\]1O
 
-\[#α-D-glucose\]   (Amylose)	
-O\[C@H\]  1\[C@@H\]  (CO)O\[C@@H\]  (\[C@H\]  (O)\[C@H\]  1O)
+\[#α-D-glucose\] (Amylose)  
+O\[C@H\]1\[C@@H\](CO)O\[C@@H\](\[C@H\](O)\[C@H\]1O)
 
-\[#N-acetylglucosamine\]   (Chitin)	
-O\[C@@H\]  1\[C@@H\]  (CO)O\[C@H\]  (\[C@H\]  (NC(=O)C)\[C@H\]  1O)O\[C@H\]  2\[C@H\]  (O)\[C@@H\]  (NC(=O)C)\[C@@H\]  (O\[C@@H\]  2CO)
+\[#N-acetylglucosamine\] (Chitin)	 
+O\[C@@H\]1\[C@@H\](CO)O\[C@H\](\[C@H\](NC(=O)C)\[C@H\]1O)O\[C@H\]2\[C@H\](O)\[C@@H\](NC(=O)C)\[C@@H\](O\[C@@H\]2CO)
 
-\[#D-glucuronicAcid-co-N-acetyl-D-glucosamine\]   (Hyaluronic acid)	
-O\[C@@H\]  1\[C@@H\]  (C(=O)O)O\[C@H\]  (\[C@H\]  (O)\[C@H\]  1O)\[C@H\]  2\[C@H\]  (O)\[C@@H\]  (CO)O\[C@H\]  (\[C@@H\]  2NC(=O)C)
+\[#D-glucuronicAcid-co-N-acetyl-D-glucosamine\] (Hyaluronic acid)	 
+O\[C@@H\]1\[C@@H\](C(=O)O)O\[C@H\](\[C@H\](O)\[C@H\]1O)\[C@H\]2\[C@H\](O)\[C@@H\](CO)O\[C@H\](\[C@@H\]2NC(=O)C)
 
-\[#p-Phenylene\]  	
+\[#p-Phenylene\]  
 c1ccc(cc1)
 
-\[#p-Xylyene\]  	
+\[#p-Xylyene\]  
 Cc1ccc(cc1)C
 
-\[#m-Xylyene\]  	
+\[#m-Xylyene\]  
 Cc1ccccc(c1)C
 
-\[#Thiophene\]  	
+\[#Thiophene\]  
 C(S1)=CC=C1
 
-\[#p-PhenyleneVinylene\]  	
+\[#p-PhenyleneVinylene\]  
 c(cc1)ccc1C=C
 
-\[#3,4-Ethylenedioxythiophene\]  	
+\[#3,4-Ethylenedioxythiophene\]  
 C(S1)=C2OCCOC2=C1
 
-\[#Pyrrole\]  	
+\[#Pyrrole\]  
 C(N1)=CC=C1
 
-\[#p-PhenyleneSulfide\]  	
+\[#p-PhenyleneSulfide\]  
 c(cc1)ccc1S
 
-\[#Actylene\]  	
+\[#Actylene\]  
 C=C
 
-\[#Leucoemeraldine\]  	
+\[#Leucoemeraldine\]  
 c(cc1)ccc1N
 
-\[#Pernigraniline\]  	
+\[#Pernigraniline\]  
 c(cc1)ccc1N=C(C=C2)C=CC2=N
 
