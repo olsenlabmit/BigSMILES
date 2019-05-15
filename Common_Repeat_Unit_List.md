@@ -15,7 +15,7 @@ CC(C)
 CCO
 
 \[#cis-1,4-Isoprene\]	
-C\C=C(C)/C
+C\\C=C(C)/C
 
 \[#trans-1,4-Isoprene\]	
 C/C=C(C)/C
@@ -42,7 +42,7 @@ C(=O)CCCCC(=O)NCCCCCCN
 CC=CC
 
 \[#cis-1,4-Butadiene\]	
-C\C=C/C
+C\\C=C/C
 
 \[#trans-1,4-Butadiene\]	
 C/C=C/C
