@@ -5,7 +5,7 @@ Note that  the names of the fragments should consist of ASCII symbols.
 Whitespace characters and square brackets should be avoided to prevent conflict with the bracket surrounding the name. 
 In addition, the names are not case sensitive. 
 
-\[#Ethylene\]  	
+\[#Ethylene\]  
 CC
 
 \[#Propylene\]  
@@ -224,10 +224,10 @@ P(=O)(O)OC\[C@H\]1O\[C@@H\](N1C=CC(=O)NC1=O)\[C@H\](O)\[C@@H\]1O
 \[#α-D-glucose\] (Amylose)  
 O\[C@H\]1\[C@@H\](CO)O\[C@@H\](\[C@H\](O)\[C@H\]1O)
 
-\[#N-acetylglucosamine\] (Chitin)	 
+\[#N-acetylglucosamine\] (Chitin)   
 O\[C@@H\]1\[C@@H\](CO)O\[C@H\](\[C@H\](NC(=O)C)\[C@H\]1O)O\[C@H\]2\[C@H\](O)\[C@@H\](NC(=O)C)\[C@@H\](O\[C@@H\]2CO)
 
-\[#D-glucuronicAcid-co-N-acetyl-D-glucosamine\] (Hyaluronic acid)	 
+\[#D-glucuronicAcid-co-N-acetyl-D-glucosamine\] (Hyaluronic acid)   
 O\[C@@H\]1\[C@@H\](C(=O)O)O\[C@H\](\[C@H\](O)\[C@H\]1O)\[C@H\]2\[C@H\](O)\[C@@H\](CO)O\[C@H\](\[C@@H\]2NC(=O)C)
 
 \[#p-Phenylene\]  
