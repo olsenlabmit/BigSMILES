@@ -15,7 +15,7 @@ For example, propylene repeat unit can either be written as CC(C) or C(C)C but n
    which is not polyproplyene.  
    For SMILES syntax, please refer to the [Daylight Chemical Information System documentation](https://www.daylight.com/dayhtml/doc/theory/theory.smiles.html)
 
-5. The repeat units are written in their canonical orientation; e.g. vinyl repeat units are written as CC(R).
+5. In general, the repeat units are written in their canonical orientation; e.g. vinyl repeat units are written as CC(R).
 
 ## Common repeat units and their equivalent string replacements 
 
