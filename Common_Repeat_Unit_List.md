@@ -5,7 +5,7 @@ Note that  the names of the fragments should consist of ASCII symbols.
 Whitespace characters and square brackets should be avoided to prevent conflict with the bracket surrounding the name. 
 In addition, the names are not case sensitive. 
 
-\[#Ethylene\]\	
+\[#Ethylene\]  
 CC
 
 \[#Propylene\]\	
