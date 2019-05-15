@@ -1,9 +1,11 @@
-# List of common repeat units and their equivalent string replacements 
-To contribute to the list, please submit a pull request. The modifications will be accepted after manual review.
+# List of common BigSMILES repeat units 
+This document holds a list of common repeat units and their equivalent string replacements that could be directly used within BigSMILES without additional definition.
+
+To contribute to the list, please submit a pull request. The modifications will be accepted after review.
 
 ## BigSMILES Fragment Naming Syntax
-1. The names of the fragments should consist of ASCII symbols. 
-2. Whitespace characters and square brackets should be avoided to prevent conflict with the bracket surrounding the name. 
+1. The names of the fragments should consist of ASCII symbols enclosed between a pair of square brackets.
+2. Whitespace characters and square brackets should be avoided within the name to prevent conflict with the bracket surrounding the name. 
 3. The names are not case sensitive. 
 
 ## Common repeat units and their equivalent string replacements 
