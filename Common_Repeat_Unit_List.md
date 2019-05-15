@@ -1,5 +1,5 @@
 # List of common BigSMILES repeat units 
-This document holds a list of common repeat units and their equivalent string replacements that could be directly used within BigSMILES without additional definition.
+This document holds a list of common repeat units and their equivalent string replacements that could be directly used within BigSMILES without additional explicit definition.
 
 To contribute to the list, please submit a pull request. The modifications will be accepted after review.
 
