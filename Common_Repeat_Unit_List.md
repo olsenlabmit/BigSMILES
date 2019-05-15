@@ -1,9 +1,12 @@
 # List of common repeat units and their equivalent string replacements 
 To contribute to the list, please submit a pull request. The modifications will be accepted after manual review.
 
-Note that  the names of the fragments should consist of ASCII symbols. 
-Whitespace characters and square brackets should be avoided to prevent conflict with the bracket surrounding the name. 
-In addition, the names are not case sensitive. 
+## BigSMILES Fragment Naming Syntax
+1. The names of the fragments should consist of ASCII symbols. 
+2. Whitespace characters and square brackets should be avoided to prevent conflict with the bracket surrounding the name. 
+3. The names are not case sensitive. 
+
+## Common repeat units and their equivalent string replacements 
 
 \[#Ethylene\]  
 CC
