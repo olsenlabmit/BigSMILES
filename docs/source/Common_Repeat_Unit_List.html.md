@@ -3,7 +3,8 @@ title: Common Repeat Unit List
 
 language_tabs: # must be one of https://git.io/vQNgJ
 
-toc_footers:  - <a href='index.html'>BigSMILES Project</a>
+toc_footers:  
+  - <a href='https://olsenlabmit.github.io/BigSMILES/'>BigSMILES Project</a>
   - <a href='line_notation.html'>BigSMILES Line Notation</a>
   - <a href='DataFormat.html'>BigSMILES Data Format</a>
   - <a href='https://github.com/olsenlabmit/bigSMILES'>GitHub</a>
