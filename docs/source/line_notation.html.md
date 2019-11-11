@@ -503,7 +503,7 @@ each fragment definition is enclosed within a pair of curly brackets, and each d
 
 `BigSMILES_string + '[' + '#' + fragment_name + ']' + BigSMILES_string + '.' + '{' + '#' + fragment_name + '=' + BigSMILES_string + '}'`
 
-The only exception for the need of such explicit definition is when the placeholder is one of the common repeat units that has been defined in this [repository](https://olsenlabmit.github.io/BigSMILES/docs/Common_Repeat_Unit_List.md). These fragment names can be used without further re-definition.
+The only exception for the need of such explicit definition is when the placeholder is one of the common repeat units that has been defined in this [repository](Common_Repeat_Unit_List.html). These fragment names can be used without further re-definition.
 
 ## Ladder Polymers
 
@@ -852,7 +852,7 @@ Made changes to the bonding descriptor syntax:
 2. Changed ladder bonding descriptor syntax: added `group_id` 
    
 * Original syntax may lead to ambiguous semantics
-   
+  
 3. Changed terminal bonding descriptor syntax
 
    * To eliminate ambiguity, the terminal bonding descriptors are always required, even if it is empty 

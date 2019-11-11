@@ -1,5 +1,23 @@
+---
+title: Common Repeat Unit List
+
+language_tabs: # must be one of https://git.io/vQNgJ
+
+toc_footers:  - <a href='index.html'>BigSMILES Project</a>
+  - <a href='line_notation.html'>BigSMILES Line Notation</a>
+  - <a href='DataFormat.html'>BigSMILES Data Format</a>
+  - <a href='https://github.com/olsenlabmit/bigSMILES'>GitHub</a>
+  - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
+
+includes:
+
+search: true
+
+---
+
 # List of common BigSMILES repeat units 
-This document holds a list of common repeat units and their equivalent SMILES string replacements that could be directly used within BigSMILES without additional explicit definition. For details on the syntax of BigSMILES line notation, please refer to the [documentation](https://olsenlabmit.github.io/BigSMILES/docs/line_notation.html#the-bigsmiles-line-notation).
+
+This document holds a list of common repeat units and their equivalent SMILES string replacements that could be directly used within BigSMILES without additional explicit definition. For details on the syntax of BigSMILES line notation, please refer to the [documentation](line_notation.html).
 
 To contribute to the list, please submit a comment/issue. The modifications will be accepted after review.
 

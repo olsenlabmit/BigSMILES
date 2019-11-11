@@ -1,0 +1,517 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Documentation</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen-a1ce949a.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-bccf8c07.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all_nosearch-c275c2f6.js"></script>
+  </head>
+
+  <body class="Common_Repeat_Unit_List" data-languages="[]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-76490add.png" class="logo" alt="Logo" />
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#list-of-common-bigsmiles-repeat-units" class="toc-h1 toc-link" data-title="List of common BigSMILES repeat units">List of common BigSMILES repeat units</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#bigsmiles-fragment-naming-syntax" class="toc-h2 toc-link" data-title="BigSMILES Fragment Naming Syntax">BigSMILES Fragment Naming Syntax</a>
+                  </li>
+                  <li>
+                    <a href="#common-repeat-units-and-their-equivalent-string-replacements" class="toc-h2 toc-link" data-title="Common repeat units and their equivalent string replacements">Common repeat units and their equivalent string replacements</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='list-of-common-bigsmiles-repeat-units'>List of common BigSMILES repeat units</h1>
+<p>This document holds a list of common repeat units and their equivalent SMILES string replacements that could be directly used within BigSMILES without additional explicit definition. For details on the syntax of BigSMILES line notation, please refer to the <a href="line_notation.html">documentation</a>.</p>
+
+<p>To contribute to the list, please submit a comment/issue. The modifications will be accepted after review.</p>
+<h2 id='bigsmiles-fragment-naming-syntax'>BigSMILES Fragment Naming Syntax</h2>
+<ol>
+<li>The names of the fragments should consist of ASCII symbols enclosed between a pair of square brackets.</li>
+<li>Whitespace characters and square brackets should be avoided within the name to prevent conflict with the bracket surrounding the name. </li>
+<li>The names are not case sensitive. </li>
+<li>SMILES strings for the repeat units need not conform to Canonical SMILES syntax; however, as they are molecular fragments to be embedded within BigSMILES strings, direct concatenation of the repeat units should yield valid oligomer structures.<br>
+For example, propylene repeat unit can either be written as CC(C) or C(C)C but not CCC, because direct concatenation of CCC would yield<br></li>
+</ol>
+
+<blockquote>
+<p>...-CCC-CCC-CCC-...  </p>
+</blockquote>
+
+<p>which is not polyproplyene.<br>
+   For SMILES syntax, please refer to the <a href="https://www.daylight.com/dayhtml/doc/theory/theory.smiles.html">Daylight Chemical Information System documentation</a></p>
+
+<ol>
+<li>In general, the repeat units are written in their canonical orientation; e.g. vinyl repeat units are written as CC(R).</li>
+</ol>
+<h2 id='common-repeat-units-and-their-equivalent-string-replacements'>Common repeat units and their equivalent string replacements</h2>
+<p>[#Ethylene]<br>
+CC</p>
+
+<p>[#Propylene]<br>
+CC(C)</p>
+
+<p>[#EthyleneGlycol]<br>
+CCO</p>
+
+<p>[#cis-1,4-Isoprene]<br>
+C\C=C(C)/C</p>
+
+<p>[#trans-1,4-Isoprene]<br>
+C/C=C(C)/C</p>
+
+<p>[#3,4-Isoprene]<br>
+CC(C(C)=C)</p>
+
+<p>[#Styrene]<br>
+CC(c1ccccc1)</p>
+
+<p>[#VinylAlcohol]<br>
+CC(O)</p>
+
+<p>[#VinylAcetate]<br>
+CC(OC(=O)C)</p>
+
+<p>[#LacticAcid]<br>
+OC(C)C(=O)</p>
+
+<p>[#Nylon-6,6]<br>
+C(=O)CCCCC(=O)NCCCCCCN</p>
+
+<p>[#1,4-Butadiene]<br>
+CC=CC</p>
+
+<p>[#cis-1,4-Butadiene]<br>
+C\C=C/C</p>
+
+<p>[#trans-1,4-Butadiene]<br>
+C/C=C/C</p>
+
+<p>[#Chloroprene]<br>
+CC(Cl)=CC</p>
+
+<p>[#VinylChloride]<br>
+CC(Cl)</p>
+
+<p>[#Tetrafluoroethylene]<br>
+C(F)(F)C(F)(F)</p>
+
+<p>[#VinylideneFluoride]<br>
+CC(F)(F)</p>
+
+<p>[#MethylMethacrylate]<br>
+CC(C)(C(=O)OC)</p>
+
+<p>[#MethylAcrylate]<br>
+CC(C(=O)OC)</p>
+
+<p>[#MethacrylicAcid]<br>
+CC(C)(C(=O)O)</p>
+
+<p>[#AcrylicAcid]<br>
+CC(C(=O)O)</p>
+
+<p>[#Methacrylate]<br>
+CC(C)(C(=O)[O-])</p>
+
+<p>[#Acrylate]<br>
+CC(C(=O)[O-])</p>
+
+<p>[#ButylAcrylate]<br>
+CC(C(=O)OCCCC)</p>
+
+<p>[#EthylAcrylate]<br>
+CC(C(=O)OCC)</p>
+
+<p>[#2-EthylhexylAcrylate]<br>
+CC(C(=O)OCC(CC)CCCC)</p>
+
+<p>[#Acrylamide]<br>
+CC(C(=O)N)</p>
+
+<p>[#Acrylonitrile]<br>
+CC(C#N)</p>
+
+<p>[#N-Isopropylacrylamide]<br>
+CC(C(=O)NC(C)C)</p>
+
+<p>[#Dimethylacrylamide]<br>
+CC(C(=O)N(C)C)</p>
+
+<p>[#4-Chlorostyrene]<br>
+CC(c1ccc(Cl)cc1)</p>
+
+<p>[#2-Chlorostyrene]<br>
+CC(c1c(Cl)cccc1)</p>
+
+<p>[#4-Chloromethylstyrene]<br>
+CC(c1ccc(CCl)cc1)</p>
+
+<p>[#4-StyrenesulfonicAcid]<br>
+CC(c1ccc(S(=O)(=O)O)cc1)</p>
+
+<p>[#StyreneSulfonate]<br>
+CC(c1ccc(S(=O)(=O)[O-])cc1)</p>
+
+<p>[#4-Vinylpyridine]<br>
+CC(c1ccncc1)</p>
+
+<p>[#2-Vinylpyridine]<br>
+CC(c1ncccc1)</p>
+
+<p>[#PropyleneGlycol]<br>
+CC(C)O</p>
+
+<p>[#GlycolicAcid]<br>
+OCC(=O)</p>
+
+<p>[#TerephthalicAcid]<br>
+C(=O)c(cc1)ccc1C(=O)</p>
+
+<p>[#e-Caprolactaone] (ε-Caprolactaone)<br>
+OCCCCCC(=O)</p>
+
+<p>[#e-Caprolactam] (ε-Caprolactam)<br>
+NCCCCCC(=O)</p>
+
+<p>[#(R)-3-Hydroxybutyrate]<br>
+O[C@H](C)CC(=O)</p>
+
+<p>[#Alanine], [#Ala]<br>
+N[C@@H](C)C(=O)</p>
+
+<p>[#Arginine], [#Arg]<br>
+N[C@@H](CCCNC(=N)N)C(=O)</p>
+
+<p>[#Asparagine], [#Asn]<br>
+N[C@@H](CC(=O)N)C(=O)</p>
+
+<p>[#AsparticAcid], [#Asp]<br>
+N[C@@H](CC(=O)O)C(=O)</p>
+
+<p>[#Cysteine], [#Cys]<br>
+N[C@@H](CS)C(=O)</p>
+
+<p>[#Glutamine], [#Gln]<br>
+N[C@@H](CCC(=O)N)C(=O)</p>
+
+<p>[#GlutamicAcid], [#Glu]<br>
+N[C@@H](CCC(=O)O)C(=O)</p>
+
+<p>[#Glycine], [#Gly]<br>
+NCC(=O)</p>
+
+<p>[#Histidine], [#His]<br>
+N[C@@H](Cc1ncnc1)C(=O)</p>
+
+<p>[#Isoleucine], [#Ile]<br>
+N[C@@H]([C@@H]  (C)CC)C(=O)</p>
+
+<p>[#Leucine], [#Leu]<br>
+N[C@@H](CC(C)C)C(=O)</p>
+
+<p>[#Lysine], [#Lys]<br>
+N[C@@H](CCCCN)C(=O)</p>
+
+<p>[#Methionine], [#Met]<br>
+N[C@@H](CCSC)C(=O)</p>
+
+<p>[#Phenylalanine], [#Phe]<br>
+N[C@@H](Cc1ccccc1)C(=O)</p>
+
+<p>[#Proline], [#Pro]<br>
+N1[C@@H](CCC1)C(=O)</p>
+
+<p>[#Serine], [#Ser]<br>
+N[C@@H](CO)C(=O)</p>
+
+<p>[#Threonine], [#Thr]<br>
+N[C@@H]([C@H](O)C)C(=O)</p>
+
+<p>[#Tryptophan], [#Trp]<br>
+N[C@@H](Cc1cnc2c1cccc2)C(=O)</p>
+
+<p>[#Tyrosine], [#Tyr]<br>
+N[C@@H](Cc1ccc(O)cc1)C(=O)</p>
+
+<p>[#Valine], [#Val]<br>
+N[C@@H](C(C)C)C(=O)</p>
+
+<p>[#DeoxyadenosineMonophosphate]<br>
+P(=O)(O)OC[C@H]1O[C@@H](N1C=NC2=C1N=CNC2N)C[C@@H]1O</p>
+
+<p>[#DeoxycytidineMonophosphate]<br>
+P(=O)(O)OC[C@H]1O[C@@H](N1C=CC(N)=NC1=O)C[C@@H]1O</p>
+
+<p>[#DeoxyguanosineMonophosphate]<br>
+P(=O)(O)OC[C@H]1O[C@@H](N1C=NC2=C1N=C(N)NC2=O)C[C@@H]1O</p>
+
+<p>[#DeoxythymidineMonophosphate]<br>
+P(=O)(O)OC[C@H]1O[C@@H](N1C=C(C)C(=O)NC1=O)C[C@@H]1O</p>
+
+<p>[#AdenosineMonophosphate]<br>
+P(=O)(O)OC[C@H]1O[C@@H](N1C=NC2=C1N=CNC2N)[C@H](O)[C@@H]1O</p>
+
+<p>[#CytidineMonophosphate]<br>
+P(=O)(O)OC[C@H]1O[C@@H](N1C=CC(N)=NC1=O)[C@H](O)[C@@H]1O</p>
+
+<p>[#GuanosineMonophosphate]<br>
+P(=O)(O)OC[C@H]1O[C@@H](N1C=NC2=C1N=C(N)NC2=O)[C@H](O)[C@@H]1O</p>
+
+<p>[#UridineMonophosphate]<br>
+P(=O)(O)OC[C@H]1O[C@@H](N1C=CC(=O)NC1=O)[C@H](O)[C@@H]1O</p>
+
+<p>[#α-D-glucose] (Amylose)<br>
+O[C@H]1[C@@H](CO)O[C@@H]([C@H](O)[C@H]1O)</p>
+
+<p>[#N-acetylglucosamine] (Chitin)<br>
+O[C@@H]1[C@@H](CO)O[C@H]([C@H](NC(=O)C)[C@H]1O)O[C@H]2[C@H](O)[C@@H](NC(=O)C)[C@@H](O[C@@H]2CO)</p>
+
+<p>[#D-glucuronicAcid-co-N-acetyl-D-glucosamine] (Hyaluronic acid)<br>
+O[C@@H]1[C@@H](C(=O)O)O[C@H]([C@H](O)[C@H]1O)[C@H]2[C@H](O)[C@@H](CO)O[C@H]([C@@H]2NC(=O)C)</p>
+
+<p>[#p-Phenylene]<br>
+c1ccc(cc1)</p>
+
+<p>[#p-Xylyene]<br>
+Cc1ccc(cc1)C</p>
+
+<p>[#m-Xylyene]<br>
+Cc1ccccc(c1)C</p>
+
+<p>[#Thiophene]<br>
+C(S1)=CC=C1</p>
+
+<p>[#p-PhenyleneVinylene]<br>
+c(cc1)ccc1C=C</p>
+
+<p>[#3,4-Ethylenedioxythiophene]<br>
+C(S1)=C2OCCOC2=C1</p>
+
+<p>[#Pyrrole]<br>
+C(N1)=CC=C1</p>
+
+<p>[#p-PhenyleneSulfide]<br>
+c(cc1)ccc1S</p>
+
+<p>[#Actylene]<br>
+C=C</p>
+
+<p>[#Leucoemeraldine]<br>
+c(cc1)ccc1N</p>
+
+<p>[#Pernigraniline]<br>
+c(cc1)ccc1N=C(C=C2)C=CC2=N</p>
+
+      </div>
+      <div class="dark-box">
+      </div>
+    </div>
+  </body>
+</html>
