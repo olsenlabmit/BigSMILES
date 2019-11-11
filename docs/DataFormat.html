@@ -1,0 +1,1453 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>BigSMILES Data Format</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen-a1ce949a.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-bccf8c07.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-c5541673.js"></script>
+  </head>
+
+  <body class="DataFormat" data-languages="[&quot;json&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-76490add.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="json">BigSMILES Data</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#the-bigsmiles-data-format" class="toc-h1 toc-link" data-title="The BigSMILES Data Format">The BigSMILES Data Format</a>
+          </li>
+          <li>
+            <a href="#metadata" class="toc-h1 toc-link" data-title="Metadata">Metadata</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#bigsmiles" class="toc-h2 toc-link" data-title="BigSMILES">BigSMILES</a>
+                  </li>
+                  <li>
+                    <a href="#id" class="toc-h2 toc-link" data-title="id">id</a>
+                  </li>
+                  <li>
+                    <a href="#src" class="toc-h2 toc-link" data-title="src">src</a>
+                  </li>
+                  <li>
+                    <a href="#log" class="toc-h2 toc-link" data-title="log">log</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#data-and-the-data-object" class="toc-h1 toc-link" data-title="Data and the Data Object">Data and the Data Object</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#indexing-a-polymeric-segment" class="toc-h2 toc-link" data-title="Indexing a Polymeric Segment">Indexing a Polymeric Segment</a>
+                  </li>
+                  <li>
+                    <a href="#measurable-properties" class="toc-h2 toc-link" data-title="Measurable Properties">Measurable Properties</a>
+                  </li>
+                  <li>
+                    <a href="#model-dependent-parameters" class="toc-h2 toc-link" data-title="Model Dependent Parameters">Model Dependent Parameters</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#list-of-supported-data-entries" class="toc-h1 toc-link" data-title="List of Supported Data Entries">List of Supported Data Entries</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#common-fields" class="toc-h2 toc-link" data-title="Common fields">Common fields</a>
+                  </li>
+                  <li>
+                    <a href="#d" class="toc-h2 toc-link" data-title="D">D</a>
+                  </li>
+                  <li>
+                    <a href="#mn" class="toc-h2 toc-link" data-title="Mn">Mn</a>
+                  </li>
+                  <li>
+                    <a href="#mw" class="toc-h2 toc-link" data-title="Mw">Mw</a>
+                  </li>
+                  <li>
+                    <a href="#mz" class="toc-h2 toc-link" data-title="Mz">Mz</a>
+                  </li>
+                  <li>
+                    <a href="#dpn" class="toc-h2 toc-link" data-title="DPn">DPn</a>
+                  </li>
+                  <li>
+                    <a href="#dpw" class="toc-h2 toc-link" data-title="DPw">DPw</a>
+                  </li>
+                  <li>
+                    <a href="#dpz" class="toc-h2 toc-link" data-title="DPz">DPz</a>
+                  </li>
+                  <li>
+                    <a href="#skewness" class="toc-h2 toc-link" data-title="skewness">skewness</a>
+                  </li>
+                  <li>
+                    <a href="#kurtosis" class="toc-h2 toc-link" data-title="kurtosis">kurtosis</a>
+                  </li>
+                  <li>
+                    <a href="#mwd" class="toc-h2 toc-link" data-title="MWD">MWD</a>
+                  </li>
+                  <li>
+                    <a href="#gpc" class="toc-h2 toc-link" data-title="GPC">GPC</a>
+                  </li>
+                  <li>
+                    <a href="#p" class="toc-h2 toc-link" data-title="p">p</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='index.html'>BigSMILES Project</a></li>
+            <li><a href='line_notation.html'>BigSMILES Line Notation</a></li>
+            <li><a href='DataFormat.html'>BigSMILES Data Format</a></li>
+            <li><a href='https://github.com/olsenlabmit/bigSMILES'>GitHub</a></li>
+            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>The <a href="line_notation.html">BigSMILES line notation</a> provides a compact representation scheme in plain text for expressing the composition and connectivity of polymers and the chemical structures of their constituent repeating units. However, while the text representations provide comprehensive descriptions on how distinct repeating units interconnect to form macromolecular fragments, each BigSMILES representation specifies only the unweighted ensemble of molecular states (individual molecular connectivity realizations) permissible by the connectivity rules defined within the string, and the bare BigSMILES strings do not explicitly contain any information on the relative weight or probability of each molecular state. Therefore, to fully specify a polymeric system, additional quantifications on the distributional properties of the polymer, such as the degree of polymerization or the dispersity, must be provided in addition to the BigSMILES string. </p>
+
+<p>This document provides the official documentation of the BigSMILES data format, a data standard that accompanies the BigSMILES line notation. </p>
+
+<aside class="success">This page is mainly meant for developers. For BigSMILES users that are looking to generate BigSMILES data files, please go to the <a href="https://olsenlabmit.github.io/BigSMILES_DataForm/">BigSMILES Data Form</a> for a more user friendly interface.
+</aside>
+<h1 id='the-bigsmiles-data-format'>The BigSMILES Data Format</h1>
+<blockquote>
+<p>A BigSMILES data file stores data in the following format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">   
+    </span><span class="s2">"BigSMILES"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"CC{[$]$CC$,$CC(C)$[$]}"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"log"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">log</span><span class="mi">1</span><span class="p">,</span><span class="err">log</span><span class="mi">2</span><span class="p">,</span><span class="err">...</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"XXXX-XXX"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"src"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"source-of-data"</span><span class="p">],</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+    </span><span class="s2">"data"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">data</span><span class="mi">1</span><span class="p">,</span><span class="err">data</span><span class="mi">2</span><span class="p">,</span><span class="err">...</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>where the terms <em>log1</em>, <em>log2</em>, <em>data1</em>, <em>data2</em> are placeholders for JSON objects that contain log entries and individual data with characterization of the structural properties of a polymer. Their exact syntax will be introduced in later sections.</p>
+
+<p>The following example provides an  expanded version with explicit objects, </p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">   
+    </span><span class="s2">"BigSMILES"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"CC{[$]$CC$,$CC(C)$[$]}{[&lt;]&gt;OCC&lt;[&gt;]}O"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"log"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="s2">"author_id"</span><span class="p">:</span><span class="s2">"921312906"</span><span class="p">,</span><span class="s2">"date"</span><span class="p">:</span><span class="s2">"2019-10-16"</span><span class="p">,</span><span class="s2">"msg"</span><span class="p">:</span><span class="s2">"file first created."</span><span class="p">},</span><span class="w">
+             </span><span class="p">{</span><span class="s2">"author_id"</span><span class="p">:</span><span class="s2">"921312906"</span><span class="p">,</span><span class="s2">"date"</span><span class="p">:</span><span class="s2">"2019-10-17"</span><span class="p">,</span><span class="s2">"msg"</span><span class="p">:</span><span class="s2">"new examples"</span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"polymer-100.1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"src"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"doi:10.1021/acscentsci.9b00476"</span><span class="p">,</span><span class="s2">"doi:10.1021/acs.macromol.8b01676"</span><span class="p">],</span><span class="w">
+
+    </span><span class="s2">"data"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+               </span><span class="s2">"target"</span><span class="p">:</span><span class="s2">"[CH3:/1][CH2:/2][CH2:/3][CH2:/4]{[$][$:/5.1/4][CH2:/5.1/3][CH2:/5.1/2][$:/5.1/1][$]}[NH2:/8]"</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"source"</span><span class="w"> </span><span class="p">:</span><span class="s2">"[CH3:/1][CH2:/2][CH2:/3][CH2:/4]{[$][$:/5.1/4][CH2:/5.1/3][CH2:/5.1/2][$:/5.1/1][$]}[CH2:/6][CH3:/7]"</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"Mn"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="s2">"value"</span><span class="p">:</span><span class="mf">4.4</span><span class="p">,</span><span class="w">
+                       </span><span class="s2">"unit"</span><span class="p">:</span><span class="s2">"kDa"</span><span class="p">,</span><span class="w">
+                       </span><span class="s2">"uncertainty"</span><span class="p">:</span><span class="mf">0.5</span><span class="p">,</span><span class="w">
+                       </span><span class="s2">"uncertainty_src"</span><span class="p">:</span><span class="s2">"multiple samples from the same batch"</span><span class="p">,</span><span class="w">
+                       </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GPC"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+               </span><span class="s2">"D"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.1</span><span class="p">,</span><span class="w"> 
+                      </span><span class="s2">"uncertainty"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w"> 
+                      </span><span class="s2">"uncertainty_src"</span><span class="p">:</span><span class="w"> </span><span class="s2">"uncertainty in GPC calibration"</span><span class="p">}]</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+               </span><span class="s2">"target"</span><span class="p">:</span><span class="s2">"{[CH3:/1][CH2:/2][CH2:/3][CH2:/4]{[$][$:/5.1/4][CH2:/5.1/3][CH2:/5.1/2][$:/5.1/1][$]}[OH:/8]"</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"source"</span><span class="w"> </span><span class="p">:</span><span class="s2">"[CH3:/1][CH2:/2][CH2:/3][CH2:/4]{[$][$:/5.1/4][CH2:/5.1/3][CH2:/5.1/2][$:/5.1/1][$]}[CH2:/6][CH3:/7]"</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"Mw"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="s2">"value"</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="w">
+                       </span><span class="s2">"unit"</span><span class="p">:</span><span class="s2">"kDa"</span><span class="p">,</span><span class="w">
+                       </span><span class="s2">"uncertainty"</span><span class="p">:</span><span class="mf">0.5</span><span class="p">,</span><span class="w">
+                       </span><span class="s2">"uncertainty_src"</span><span class="p">:</span><span class="s2">"multiple samples from the same batch"</span><span class="p">,</span><span class="w">
+                       </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GPC"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+               </span><span class="s2">"D"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.5</span><span class="p">}]</span><span class="w"> 
+              </span><span class="p">}</span><span class="w"> 
+             </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>The major aim of the BigSMILES data format is to provide a standard language for the storage of chemical structure related characterization for polymers. In the data file, the data entries are stored in JSON format.</p>
+
+<p>In JSON, multiple name-value pairs are saved in a comma-delimited list. Unless otherwise specified, all lists within the BigSMILES data format are considered unordered (even for arrays). This improves flexibility and minimize overhead burden in transforming existing records into the standard data format.</p>
+
+<p>An illustrative BigSMILES data JSON file example is shown in the code block. In the rest of the document, a JSON file/object that describes a single polymer is referred to as the <strong><em>main JSON object</em></strong>.</p>
+
+<aside class="success">Remember — Each BigSMILES JSON file contains data and characterization for exactly one polymer. Multiple polymers that appear within one literature should be encoded within separate files. </aside>
+
+<p>In BigSMILES data format, relevant data is stored within different entries according to their nature. On the highest level, data are classified into two major different categories:</p>
+
+<ul>
+<li><strong>metadata</strong> associated with the data file itself, such as the document identifier, the source of the data, or other information relevant to the maintenance of the data file itself, and</li>
+<li><strong>data</strong> or parameters that provide characterization of the chemical structure of the polymer</li>
+</ul>
+
+<p>where the name-value pairs of the metadata, such as the BigSMILES string of the polymer, the author, the document identifier, etc., are directly stored on the top level of the JSON file (more details on the definition of some standard metadata entries will be provided shortly), and the physicochemical properties relevant to the characterization of the chemical structure are encapsulated and compiled within the &quot;data&quot; entry. </p>
+
+<aside class="notice">The order of which each individual entry appears does not matter; as long as each entry is denoted by a comma-delimited list of name (specified by a string within quotation marks) and value pairs separated by colons, they are considered equally valid.</aside>
+<h1 id='metadata'>Metadata</h1>
+<blockquote>
+<p>The metadata section of a BigSMILES data file has the following format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">   
+    </span><span class="s2">"BigSMILES"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"CC{[$]$CC$,$CC(C)$[$]}"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"log"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="s2">"author_id"</span><span class="p">:</span><span class="s2">"921312906"</span><span class="p">,</span><span class="s2">"date"</span><span class="p">:</span><span class="s2">"2019-10-16"</span><span class="p">,</span><span class="s2">"msg"</span><span class="p">:</span><span class="s2">"file first created."</span><span class="p">},</span><span class="w">
+             </span><span class="p">{</span><span class="s2">"author_id"</span><span class="p">:</span><span class="s2">"921312906"</span><span class="p">,</span><span class="s2">"date"</span><span class="p">:</span><span class="s2">"2019-10-17"</span><span class="p">,</span><span class="s2">"msg"</span><span class="p">:</span><span class="s2">"new examples"</span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"XXXX-XXX"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"src"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"source 1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"source 2"</span><span class="p">,</span><span class="w"> </span><span class="s2">"source3"</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"other metadata1"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"value1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"other metadata2"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"other metadataN"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"valueN1"</span><span class="p">,</span><span class="s2">"valueN2"</span><span class="p">,</span><span class="s2">"valueN3"</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>A list of useful metadata entries are provided in this section. However, it should be noted that the provided list is very basic and not intended to be comprehensive. Additional metadata entries beyond the provided list can be incorporated depending on the specific needs of individual projects. Standardization are provided for these to serve as a guideline for recording the essential information. </p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><a href="#bigsmiles">BigSMILES</a></td>
+<td>string</td>
+<td>The BigSMILES string for the polymer.</td>
+</tr>
+<tr>
+<td><a href="#id">id</a></td>
+<td>string</td>
+<td>An identifier for the document to serve as document reference id in database or file systems.</td>
+</tr>
+<tr>
+<td><a href="#src">src</a></td>
+<td>array</td>
+<td>The source of the data.</td>
+</tr>
+<tr>
+<td><a href="#log">log</a></td>
+<td>array</td>
+<td>An array that contains the revision log of the document.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">It is strongly recommended that these provided entries are incorporated within every data file, because they provide basic information that allows for verification of the data entries for each created polymer, as well as serving as digital trails for document curation purposes.</aside>
+<h2 id='bigsmiles'>BigSMILES</h2>
+<blockquote>
+<p>Syntax and usage</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="s2">"BigSMILES"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"{&lt;OCC&gt;;&gt;[H],&lt;O}"</span><span class="w">
+</span><span class="s2">"BigSMILES"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"CC{[$]$CC$,$CC(C)$[$]}"</span><span class="w">
+</span></code></pre>
+<p>BigSMILES holds the BigSMILES string generated by the <a href="BigSMILES_LineNotation.md">BigSMILES line notation</a> that describes the basic chemical connectivity pattern between constituent units for a polymer.</p>
+
+<p><strong>Type</strong></p>
+
+<p>string</p>
+<h2 id='id'>id</h2>
+<blockquote>
+<p>Syntax and usage</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"1100583"</span><span class="w">
+</span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Polymer-0-05"</span><span class="w">
+</span></code></pre>
+<p>id holds a string that serves as an identifier for the document. It should correspond to the unique identifier in a database or the file identifier in a file system or data repository.</p>
+
+<p><strong>Type</strong></p>
+
+<p>string</p>
+<h2 id='src'>src</h2>
+<blockquote>
+<p>Syntax and usage</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="s2">"src"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"10.1021/acscentsci.9b00476"</span><span class="p">,</span><span class="s2">"10.1021/acs.macromol.8b01676"</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>src holds an array of strings that specifies the source(s) of the raw data. </p>
+
+<p>In academic settings, the DOI number associated with the reference literatures could be a good choice of unambiguous specification of the source; for industry or individual organizations, DOI can be replaced by the internal document identifier of the relevant documents.</p>
+
+<p><strong>Type</strong></p>
+
+<p>array of strings</p>
+<h2 id='log'>log</h2>
+<blockquote>
+<p>Syntax and usage</p>
+
+<p>Author represented as numerical identifiers</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="s2">"log"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"author_id"</span><span class="p">:[</span><span class="s2">"921312906"</span><span class="p">,</span><span class="s2">"9527"</span><span class="p">],</span><span class="s2">"date"</span><span class="p">:</span><span class="s2">"2019-10-16"</span><span class="p">,</span><span class="s2">"msg"</span><span class="p">:</span><span class="s2">"file first created."</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"author_id"</span><span class="p">:[</span><span class="s2">"921312906"</span><span class="p">],</span><span class="s2">"date"</span><span class="p">:</span><span class="s2">"2019-10-17"</span><span class="p">,</span><span class="s2">"msg"</span><span class="p">:</span><span class="s2">"new examples"</span><span class="p">},</span><span class="w"> 
+    </span><span class="p">{</span><span class="s2">"author_id"</span><span class="p">:[</span><span class="s2">"921312906"</span><span class="p">],</span><span class="s2">"date"</span><span class="p">:</span><span class="s2">"2019-10-19"</span><span class="p">,</span><span class="s2">"msg"</span><span class="p">:</span><span class="s2">"more examples"</span><span class="p">}</span><span class="w"> 
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>or authors with their names explicitly included</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="s2">"log"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"author_id"</span><span class="p">:[</span><span class="s2">"Tzyy-Shyang Lin"</span><span class="p">],</span><span class="w">
+     </span><span class="s2">"date"</span><span class="p">:</span><span class="s2">"2019-10-07"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"msg"</span><span class="p">:</span><span class="s2">"document first created"</span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"author_id"</span><span class="p">:[</span><span class="s2">"Tzyy-Shyang Lin"</span><span class="p">,</span><span class="s2">"Bradley Olsen"</span><span class="p">],</span><span class="w">
+     </span><span class="s2">"date"</span><span class="p">:</span><span class="s2">"2019-10-10"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"msg"</span><span class="p">:</span><span class="s2">"first revision, modified kinetics section"</span><span class="p">},</span><span class="w"> 
+    </span><span class="p">{</span><span class="s2">"author_id"</span><span class="p">:[</span><span class="s2">"MONET Team"</span><span class="p">],</span><span class="w">
+     </span><span class="s2">"date"</span><span class="p">:</span><span class="s2">"2019-10-20"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"msg"</span><span class="p">:</span><span class="s2">"first publishable version"</span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>log holds the log of the revisions of the document. </p>
+
+<p>The log consists of an array of <em>log objects</em>. Each log object is a JSON object that contains the following entries:</p>
+
+<ul>
+<li>author_id (array of string)
+A list of the identifier for the authors (represented as strings) of the revision of the document. Depending on the application, the authors can be represented by 
+
+<ul>
+<li>ORCID</li>
+<li>employee id</li>
+<li>... or any other suitable identifier (such as names of the author)</li>
+</ul></li>
+<li>date (string)
+represented by a string in the &quot;yyyy-mm-dd&quot; format</li>
+<li>msg (string)
+a string logging necessary information or message associated with the revision</li>
+</ul>
+
+<p><strong>Type</strong></p>
+
+<p>array of <em>log object</em></p>
+
+<aside class="notice">Using names as author identifiers are strongly discouraged, because they are often not unique and difficult to track. Unique identifiers such as ORCID are preferred.</aside>
+<h1 id='data-and-the-data-object'>Data and the Data Object</h1>
+<blockquote>
+<p>The data objects are embedded within the main JSON object</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">   
+    </span><span class="s2">"BigSMILES"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"CC{[$]$CC$,$CC(C)$[$]}"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"log"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="s2">"author_id"</span><span class="p">:</span><span class="s2">"921312906"</span><span class="p">,</span><span class="s2">"date"</span><span class="p">:</span><span class="s2">"2019-10-16"</span><span class="p">,</span><span class="s2">"msg"</span><span class="p">:</span><span class="s2">"file first created."</span><span class="p">},</span><span class="w">
+             </span><span class="p">{</span><span class="s2">"author_id"</span><span class="p">:</span><span class="s2">"921312906"</span><span class="p">,</span><span class="s2">"date"</span><span class="p">:</span><span class="s2">"2019-10-17"</span><span class="p">,</span><span class="s2">"msg"</span><span class="p">:</span><span class="s2">"new examples"</span><span class="p">}</span><span class="w"> </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"XXXX-XXX"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"src"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"source 1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"source 2"</span><span class="p">,</span><span class="w"> </span><span class="s2">"source3"</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"other metadata1"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"value1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">data_obj</span><span class="mi">1</span><span class="p">,</span><span class="err">data_obj</span><span class="mi">2</span><span class="p">,</span><span class="err">...</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Each data object follows the following syntax</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"target"</span><span class="p">:</span><span class="s2">"{...}"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"source"</span><span class="p">:</span><span class="s2">"{...}"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Mn"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="s2">"value"</span><span class="p">:</span><span class="mf">4.4</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"unit"</span><span class="p">:</span><span class="s2">"kDa"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"uncertainty"</span><span class="p">:</span><span class="mf">0.5</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"uncertainty_src"</span><span class="p">:</span><span class="s2">"multiple samples from the same batch"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GPC"</span><span class="w"> </span><span class="p">}],</span><span class="w">
+    </span><span class="s2">"D"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.1</span><span class="p">,</span><span class="w"> 
+           </span><span class="s2">"uncertainty"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w"> 
+           </span><span class="s2">"uncertainty_src"</span><span class="p">:</span><span class="w"> </span><span class="s2">"uncertainty in GPC calibration"</span><span class="p">}]</span><span class="w"> </span><span class="p">,</span><span class="w">
+    </span><span class="s2">"kinetics"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="s2">"parameter1"</span><span class="p">:</span><span class="s2">"value1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"description-text"</span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>The &quot;target&quot; and &quot;source&quot; entries are always required, whereas other entries related to properties are included depending on availability.  Note that although only two properties (number average molecular weight and dispersity) are included in the example, in general, all relevant properties should be included. </p>
+</blockquote>
+
+<p>In the BigSMILES data format, the data associated with the molecular structures of the polymers are encapsulated within the &quot;data&quot; entry with an array of <strong><em>data objects</em></strong> in the following syntax</p>
+
+<p><code>&quot;data&quot; : [data_obj1, data_obj2, data_obj3,...]</code></p>
+
+<p>and placed within the major JSON object, as illustrated in the example. Each data object corresponds to a set of characterization data of the polymer of interest or a precursor related to the logged polymer. The data object encapsulates properties and parameters that are relevant to the determination of the distribution of different molecular states within the ensemble given by the line notation. The syntax for the data object is illustrated in the example panel.</p>
+
+<p>Each data object is consisted of the following three types of entries:</p>
+
+<ol>
+<li>indexing entries (the &quot;target&quot; and &quot;source&quot; entries) 
+
+<ul>
+<li>target:<br>
+the labelled BigSMILES string of the polymer segment or precursor on which the physicochemical measurements are actually performed</li>
+<li>source:<br>
+the labelled BigSMILES string of the original polymer (the one specified in the &quot;BigSMILES&quot; entry). </li>
+<li>source and target should be labelled consistently such that the corresponding atoms on the two BigSMILES strings have the identical index</li>
+</ul></li>
+<li>measurable properties that provide characterization of the chemical structure of the polymer, such as number average molecular weight, dispersity, ... etc.</li>
+<li>properties or parameters that provide information that could be used to infer the chemical structure of a polymer, but are model dependent and become meaningless outside of the context of a specific physicochemical model</li>
+</ol>
+
+<p>The entries in the first two categories are directly listed within the data object (analogous to the metadata entries in the main JSON object), whereas the parameters that are model dependent are encapsulated within a &quot;kinetics&quot; entry.  </p>
+
+<aside class="notice">Remember - The order of the entries do not matter!</aside>
+<h2 id='indexing-a-polymeric-segment'>Indexing a Polymeric Segment</h2>
+<blockquote>
+<p>For each data object, the &quot;target&quot; and &quot;source&quot; entries must be included</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">data_obj</span><span class="w"> </span><span class="err">=</span><span class="w"> 
+</span><span class="p">{</span><span class="w">   
+    </span><span class="s2">"target"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"[CH3:/1][CH2:/2][CH2:/3][CH2:/4]{[$][$:/5.1/4][CH2:/5.1/3][CH2:/5.1/2][$:/5.1/1][$]}[NH2:/8]"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"source"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"[CH3:/1][CH2:/2][CH2:/3][CH2:/4]{[$][$:/5.1/4][CH2:/5.1/3][CH2:/5.1/2][$:/5.1/1][$]}[CH2:/6][CH3:/7]"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Mn"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="p">[{</span><span class="s2">"value"</span><span class="p">:</span><span class="mf">4.4</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="p">}],</span><span class="w">
+    </span><span class="s2">"D"</span><span class="w"> </span><span class="p">:</span><span class="w">   </span><span class="p">[{</span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.1</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="p">}],</span><span class="w">
+    </span><span class="s2">"kinetics"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="err">...</span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>As detailed within the specification, any scheme that satisfy the requirements could be used to provide labelling of the target and source polymers. </p>
+
+<p>For instance, the following example describes a target polymer of amine functionalized polyethylene and a source polymer with ethyl end groups instead of the amine end:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="s2">"target"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"[CH3:/1][CH2:/2][CH2:/3][CH2:/4]{[$][$:/5.1/4][CH2:/5.1/3][CH2:/5.1/2][$:/5.1/1][$]}[NH2:/8]"</span><span class="p">,</span><span class="w">
+</span><span class="s2">"source"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"[CH3:/1][CH2:/2][CH2:/3][CH2:/4]{[$][$:/5.1/4][CH2:/5.1/3][CH2:/5.1/2][$:/5.1/1][$]}[CH2:/6][CH3:/7]"</span><span class="w">
+</span></code></pre>
+<p>In each data object, the exact element or component of the polymer that the properties are associated with is given by the <code>target</code> and <code>source</code> entries. </p>
+
+<table><thead>
+<tr>
+<th>Entry Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>target</td>
+<td>string</td>
+<td>The labelled BigSMILES string of the polymer segment or precursor on which the physicochemical measurements are actually performed</td>
+</tr>
+<tr>
+<td>source</td>
+<td>array</td>
+<td>The labelled BigSMILES string of the original polymer (the one specified in the &quot;BigSMILES&quot; entry).</td>
+</tr>
+</tbody></table>
+
+<p>In principle, the BigSMILES data format is designed to store quantifications obtained directly from experimental measurements. The &quot;target&quot; entry is designed to contain the BigSMILES string of the exact polymer molecule that the measurements are performed on. </p>
+
+<p>However, for polymers, it is common that characterizations are performed on precursors or polymers that are not exactly identical to the actual polymer of interest. This is especially common for polymers that undergo post-characterization functionalization, or polymers segments that have been grafted or tethered to other polymer segments. In these cases, the target polymer would not be the same as the polymer of interest, and may contain parts or atoms that could not necessarily be found in the polymer of interest.</p>
+
+<aside class="notice">In this case, the the BigSMILES string within the target field would not be substrings of the original BigSMILES string.</aside>
+
+<p>To unambiguously specify which of the atom(s) on the polymer of interest do each atom on the target polymer correspond to, a map between the atoms on the target polymer and the atoms on the polymer of interest (the source polymer) must be provided. The mapping is provided by labelling the BigSMILES string of the target polymer and the BigSMILES string of the original polymer. </p>
+
+<p>For the purpose of the data standard, any labelling scheme could be used as long as the labelling scheme satisfies the following criteria:</p>
+
+<ol>
+<li>For a BigSMILES string, each atom and bonding descriptor should be assigned an unique string label. </li>
+<li>For any atom on the target polymer that has correspondence on the source polymer, the label for the atom on target should be identical to the label of the corresponding atom on source </li>
+<li>For any atom on the target polymer that does not have a corresponding atom on the source polymer, the label for such atom should not match any label on the source polymer</li>
+</ol>
+
+<p>For BigSMILES users, a tool with graphical interface that could consistently generate valid labels can be found <a href="https://olsenlabmit.github.io/BigSMILES_builder/">here</a>.</p>
+
+<aside class="warning">The target and atom_idx entries are required for every data object.</aside>
+<h2 id='measurable-properties'>Measurable Properties</h2>
+<blockquote>
+<p>Relevant properties can be included within the list of entries in a data object</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">data_obj</span><span class="w"> </span><span class="err">=</span><span class="w"> 
+</span><span class="p">{</span><span class="w">   
+    </span><span class="s2">"target"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"source"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Mn"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="p">[{</span><span class="s2">"value"</span><span class="p">:</span><span class="mf">4.4</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="p">}],</span><span class="w">
+    </span><span class="s2">"D"</span><span class="w"> </span><span class="p">:</span><span class="w">   </span><span class="p">[{</span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.1</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="p">}],</span><span class="w">
+    </span><span class="s2">"kinetics"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="err">...</span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>For each property, please refer to corresponding sections for detailed syntax.</p>
+</blockquote>
+
+<p>Characterization on measurable properties are logged under the corresponding array within the data object. For each measurable property, the set of required and optional fields are slightly different. Please click on the name of the property in the table to view the exact syntax.</p>
+
+<aside class="warning">Currently, properties such as tacticity, head-to-tail configuration and composition are not supported. These are actively under development and should be available soon.</aside>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><a href="#d">D</a></td>
+<td>Dispersity</td>
+</tr>
+<tr>
+<td><a href="#mn">Mn</a></td>
+<td>Number average molecular weight</td>
+</tr>
+<tr>
+<td><a href="#mw">Mw</a></td>
+<td>Weight average molecular weight</td>
+</tr>
+<tr>
+<td><a href="#mz">Mz</a></td>
+<td>Z average molecular weight</td>
+</tr>
+<tr>
+<td><a href="#dpn">DPn</a></td>
+<td>Number average degree of polymerization</td>
+</tr>
+<tr>
+<td><a href="#dpw">DPw</a></td>
+<td>Weight average degree of polymerization</td>
+</tr>
+<tr>
+<td><a href="#dpz">DPz</a></td>
+<td>Z average degree of polymerization</td>
+</tr>
+<tr>
+<td><a href="#skewness">skewness</a></td>
+<td>The skewness of the molecular weight distribution</td>
+</tr>
+<tr>
+<td><a href="#kurtosis">kurtosis</a></td>
+<td>The kurtosis of the molecular weight distribution</td>
+</tr>
+<tr>
+<td><a href="#mwd">MWD</a></td>
+<td>The full molecular weight distribution</td>
+</tr>
+<tr>
+<td><a href="#gpc">GPC</a></td>
+<td>The GPC measurement data for polymer molecular weight distribution</td>
+</tr>
+<tr>
+<td><a href="#p">p</a></td>
+<td>The extent of reaction</td>
+</tr>
+</tbody></table>
+
+<aside class="warning">BigSMILES data format is designed specifically for describing the structural features of polymers. Therefore, properties, such as the viscosity, that are not directly relevant to the structure should <b>NOT</b> be included within the data objects.</aside>
+
+<aside class="warning">Unlike the metadata list, to ensure maximal compatibility, incorporating entries not contained within the supported properties list is strongly discouraged. If there are missing fields that you consider necessary, please submit a modification or update request, and we will incorporate the new entry into the standard list as soon as possible.</aside>
+<h2 id='model-dependent-parameters'>Model Dependent Parameters</h2>
+<blockquote>
+<p>The kinetic object can contain any user defined parameters that are relevant to the specific kinetic model. The only requirement is that the object contain either a description that details the exact definitions of each parameter and how they work with a specific kinetic model, or a reference to another document that contains such information.</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">kinetic_obj</span><span class="w"> </span><span class="err">=</span><span class="w"> 
+</span><span class="p">{</span><span class="w">   
+    </span><span class="s2">"src"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"source-to-model-description"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"description of the model"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"parameter1"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"value1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"parameter2"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"value2"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>As discussed earlier, the data object should only explicitly contain properties that are not model dependent. Meanwhile, other parameters, such as the reactive rate constants (which are meaningful only under the context of a certain kinetic model, reaction mechanism and other assumptions), although not objectively quantitative, may also provide means to infer the relative weights of the molecular states in an ensemble. To include these information, the following syntax can be used:</p>
+
+<p><code>&quot;kinetics&quot;: kinetics object</code></p>
+
+<p>However, since each kinetic model is highly specific and often vastly different from other models both in terms of the nature and number of parameters required, standardization for the <strong><em>kinetics object</em></strong> is currently not supported, and the user is free to define and include any parameter as deemed necessary. The only strict requirement is that the kinetics object must contain an entry that either clearly specifies the exact definitions of each parameter and how they work with a specific kinetic model to inform the molecular structures, or provide a reference to another document that details such information.</p>
+<h1 id='list-of-supported-data-entries'>List of Supported Data Entries</h1><h2 id='common-fields'>Common fields</h2>
+<p>For every property, the following fields are always included. Therefore, they will not be repeated in later sections.</p>
+
+<p><strong>Object Fields</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>src</td>
+<td>string</td>
+<td>optional</td>
+<td>the source of the data within the entry</td>
+</tr>
+</tbody></table>
+<h2 id='d'>D</h2>
+<blockquote>
+<p>Syntax and usage</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="s2">"D"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"value"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">1.1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"uncertainty"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"uncertainty_src"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"uncertainty of GPC calibration"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"GPC"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Dispersity of the selected polymeric segment.</p>
+
+<p><strong>Object Fields</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>value</td>
+<td>number</td>
+<td>required</td>
+<td>the numeric value of the dispersity</td>
+</tr>
+<tr>
+<td>uncertainty</td>
+<td>number</td>
+<td>optional</td>
+<td>the uncertainty of the provided dispersity</td>
+</tr>
+<tr>
+<td>uncertainty_src</td>
+<td>string</td>
+<td>optional</td>
+<td>an explanation of what the provided uncertainty reflect and how the number/estimation is obtained</td>
+</tr>
+<tr>
+<td>method</td>
+<td>string</td>
+<td>optional</td>
+<td>how the value is measured or obtained</td>
+</tr>
+</tbody></table>
+<h2 id='mn'>Mn</h2>
+<blockquote>
+<p>Syntax and usage</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="s2">"Mn"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"value"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">4.4</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"unit"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"kDa"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"uncertainty"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"uncertainty_src"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"multiple samples from the same batch"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"GPC"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Number average molecular weight  </p>
+
+<p><strong>Object Fields</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>value</td>
+<td>number</td>
+<td>required</td>
+<td>the numeric value of the molecular weight</td>
+</tr>
+<tr>
+<td>unit</td>
+<td>string</td>
+<td>required</td>
+<td>the unit of the provided value</td>
+</tr>
+<tr>
+<td>method</td>
+<td>string</td>
+<td>optional</td>
+<td>how the value is measured or obtained</td>
+</tr>
+<tr>
+<td>uncertainty</td>
+<td>number</td>
+<td>optional</td>
+<td>the uncertainty of the provided value. The uncertainty must be provided in the same units as the value provided</td>
+</tr>
+<tr>
+<td>uncertainty_src</td>
+<td>string</td>
+<td>optional</td>
+<td>an explanation of what the provided uncertainty reflect and how the number/estimation is obtained</td>
+</tr>
+</tbody></table>
+
+<p><strong>Allowed Units</strong></p>
+
+<ul>
+<li>kDa</li>
+<li>Da</li>
+</ul>
+<h2 id='mw'>Mw</h2>
+<blockquote>
+<p>Syntax and usage</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="s2">"Mz"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"value"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">4.4</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"unit"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"kDa"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"uncertainty"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"uncertainty_src"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"multiple samples from the same batch"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"GPC"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Weight average molecular weight  </p>
+
+<p><strong>Object Fields</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>value</td>
+<td>number</td>
+<td>required</td>
+<td>the numeric value of the molecular weight</td>
+</tr>
+<tr>
+<td>unit</td>
+<td>string</td>
+<td>required</td>
+<td>the unit of the provided value</td>
+</tr>
+<tr>
+<td>method</td>
+<td>string</td>
+<td>optional</td>
+<td>how the value is measured or obtained</td>
+</tr>
+<tr>
+<td>uncertainty</td>
+<td>number</td>
+<td>optional</td>
+<td>the uncertainty of the provided value. The uncertainty must be provided in the same units as the value provided</td>
+</tr>
+<tr>
+<td>uncertainty_src</td>
+<td>string</td>
+<td>optional</td>
+<td>an explanation of what the provided uncertainty reflect and how the number/estimation is obtained</td>
+</tr>
+</tbody></table>
+
+<p><strong>Allowed Units</strong></p>
+
+<ul>
+<li><p>kDa</p></li>
+<li><p>Da</p></li>
+</ul>
+<h2 id='mz'>Mz</h2>
+<blockquote>
+<p>Syntax and usage</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="s2">"Mz"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"value"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">4.4</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"unit"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"kDa"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"uncertainty"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"uncertainty_src"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"multiple samples from the same batch"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"GPC"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Z average molecular weight  </p>
+
+<p><strong>Object Fields</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>value</td>
+<td>number</td>
+<td>required</td>
+<td>the numeric value of the molecular weight</td>
+</tr>
+<tr>
+<td>unit</td>
+<td>string</td>
+<td>required</td>
+<td>the unit of the provided value</td>
+</tr>
+<tr>
+<td>method</td>
+<td>string</td>
+<td>optional</td>
+<td>how the value is measured or obtained</td>
+</tr>
+<tr>
+<td>uncertainty</td>
+<td>number</td>
+<td>optional</td>
+<td>the uncertainty of the provided value. The uncertainty must be provided in the same units as the value provided</td>
+</tr>
+<tr>
+<td>uncertainty_src</td>
+<td>string</td>
+<td>optional</td>
+<td>an explanation of what the provided uncertainty reflect and how the number/estimation is obtained</td>
+</tr>
+</tbody></table>
+
+<p><strong>Allowed Units</strong></p>
+
+<ul>
+<li><p>kDa</p></li>
+<li><p>Da</p></li>
+</ul>
+<h2 id='dpn'>DPn</h2>
+<blockquote>
+<p>Syntax and usage</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="s2">"DPn"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"value"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"uncertainty"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"uncertainty_src"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"multiple samples from the same batch"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"GPC"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Number average degree of polymerization of the selected polymeric segment. If multiple blocks are selected, this represent the sum of multiple blocks.</p>
+
+<p><strong>Object Fields</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>value</td>
+<td>number</td>
+<td>required</td>
+<td>the numeric value of the degree of polymerization</td>
+</tr>
+<tr>
+<td>uncertainty</td>
+<td>number</td>
+<td>optional</td>
+<td>the uncertainty of the provided value</td>
+</tr>
+<tr>
+<td>uncertainty_src</td>
+<td>string</td>
+<td>optional</td>
+<td>an explanation of what the provided uncertainty reflect and how the number/estimation is obtained</td>
+</tr>
+<tr>
+<td>method</td>
+<td>string</td>
+<td>optional</td>
+<td>how the value is measured or obtained</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">The end groups and everything not contained within stochastic objects are ignored.</aside>
+<h2 id='dpw'>DPw</h2>
+<blockquote>
+<p>Syntax and usage</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="s2">"DPw"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"value"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"uncertainty"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"uncertainty_src"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"multiple samples from the same batch"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"GPC"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Weight average degree of polymerization of the selected polymeric segment. If multiple blocks are selected, this represent the sum of multiple blocks.</p>
+
+<p><strong>Object Fields</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>value</td>
+<td>number</td>
+<td>required</td>
+<td>the numeric value of the degree of polymerization</td>
+</tr>
+<tr>
+<td>uncertainty</td>
+<td>number</td>
+<td>optional</td>
+<td>the uncertainty of the provided value</td>
+</tr>
+<tr>
+<td>uncertainty_src</td>
+<td>string</td>
+<td>optional</td>
+<td>an explanation of what the provided uncertainty reflect and how the number/estimation is obtained</td>
+</tr>
+<tr>
+<td>method</td>
+<td>string</td>
+<td>optional</td>
+<td>how the value is measured or obtained</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">The end groups and everything not contained within stochastic objects are ignored.</aside>
+<h2 id='dpz'>DPz</h2>
+<blockquote>
+<p>Syntax and usage</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="s2">"DPz"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"value"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"uncertainty"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"uncertainty_src"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"multiple samples from the same batch"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"GPC"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Z average degree of polymerization of the selected polymeric segment. If multiple blocks are selected, this represent the sum of multiple blocks.</p>
+
+<p><strong>Object Fields</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>value</td>
+<td>number</td>
+<td>required</td>
+<td>the numeric value of the degree of polymerization</td>
+</tr>
+<tr>
+<td>uncertainty</td>
+<td>number</td>
+<td>optional</td>
+<td>the uncertainty of the provided value</td>
+</tr>
+<tr>
+<td>uncertainty_src</td>
+<td>string</td>
+<td>optional</td>
+<td>an explanation of what the provided uncertainty reflect and how the number/estimation is obtained</td>
+</tr>
+<tr>
+<td>method</td>
+<td>string</td>
+<td>optional</td>
+<td>how the value is measured or obtained</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">The end groups and everything not contained within stochastic objects are ignored.</aside>
+<h2 id='skewness'>skewness</h2>
+<blockquote>
+<p>Syntax and usage</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="s2">"skewness"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"value"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"uncertainty"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"uncertainty_src"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"multiple samples from the same batch"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"GPC"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>The skewness of the molecular weight distribution  </p>
+
+<p><strong>Object Fields</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>value</td>
+<td>number</td>
+<td>required</td>
+<td>the numeric value of the skewness</td>
+</tr>
+<tr>
+<td>uncertainty</td>
+<td>number</td>
+<td>optional</td>
+<td>the uncertainty of the provided value</td>
+</tr>
+<tr>
+<td>uncertainty_src</td>
+<td>string</td>
+<td>optional</td>
+<td>an explanation of what the provided uncertainty reflect and how the number/estimation is obtained</td>
+</tr>
+<tr>
+<td>method</td>
+<td>string</td>
+<td>optional</td>
+<td>how the value is measured or obtained</td>
+</tr>
+</tbody></table>
+<h2 id='kurtosis'>kurtosis</h2>
+<blockquote>
+<p>Syntax and usage</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="s2">"kurtosis"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"value"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"uncertainty"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"uncertainty_src"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"multiple samples from the same batch"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"GPC"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>The kurtosis of the molecular weight distribution  </p>
+
+<p><strong>Object Fields</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>value</td>
+<td>number</td>
+<td>required</td>
+<td>the numeric value of the kurtosis</td>
+</tr>
+<tr>
+<td>uncertainty</td>
+<td>number</td>
+<td>optional</td>
+<td>the uncertainty of the provided value</td>
+</tr>
+<tr>
+<td>uncertainty_src</td>
+<td>string</td>
+<td>optional</td>
+<td>an explanation of what the provided uncertainty reflect and how the number/estimation is obtained</td>
+</tr>
+<tr>
+<td>method</td>
+<td>string</td>
+<td>optional</td>
+<td>how the value is measured or obtained</td>
+</tr>
+</tbody></table>
+<h2 id='mwd'>MWD</h2>
+<blockquote>
+<p>Syntax and usage</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="s2">"MWD"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"value"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.02</span><span class="p">,</span><span class="err">...</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"mol_wt"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.05</span><span class="p">,</span><span class="mf">1.10</span><span class="p">,</span><span class="err">...</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"unit"</span><span class="w">  </span><span class="p">:</span><span class="w"> </span><span class="s2">"kDa"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"uncertainty"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.001</span><span class="p">,</span><span class="mf">0.001</span><span class="p">,</span><span class="mf">0.002</span><span class="p">,</span><span class="err">...</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"uncertainty_src"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"GPC uncertainty"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"GPC"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>The full molecular weight distribution</p>
+
+<p><strong>Object Fields</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>value</td>
+<td>array of number</td>
+<td>required</td>
+<td>the relative probability densities at each molecular weight</td>
+</tr>
+<tr>
+<td>mol_wt</td>
+<td>array of number</td>
+<td>required</td>
+<td>the molecular weight with which the values are associated with. length of the value and mol_wt arrays should be identical</td>
+</tr>
+<tr>
+<td>unit</td>
+<td>string</td>
+<td>required</td>
+<td>unit for molecular weight. choice: &#39;kDa&#39; or &#39;Da&#39;</td>
+</tr>
+<tr>
+<td>method</td>
+<td>string</td>
+<td>optional</td>
+<td>how the value is measured or obtained</td>
+</tr>
+<tr>
+<td>uncertainty</td>
+<td>array of number</td>
+<td>optional</td>
+<td>the uncertainty of each provided value.</td>
+</tr>
+<tr>
+<td>uncertainty_src</td>
+<td>string</td>
+<td>optional</td>
+<td>an explanation of what the provided uncertainty reflect and how the number/estimation is obtained</td>
+</tr>
+</tbody></table>
+
+<p><strong>Allowed Units</strong></p>
+
+<ul>
+<li>kDa</li>
+<li>Da</li>
+</ul>
+<h2 id='gpc'>GPC</h2>
+<blockquote>
+<p>Syntax and usage</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="s2">"GPC"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"I"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.02</span><span class="p">,</span><span class="err">...</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"t"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.05</span><span class="p">,</span><span class="mf">1.10</span><span class="p">,</span><span class="err">...</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"unit_t"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"calib"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"calibration-doc"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"unit_I"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arbitrary unit"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"uncertainty"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.001</span><span class="p">,</span><span class="mf">0.001</span><span class="p">,</span><span class="mf">0.002</span><span class="p">,</span><span class="err">...</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"uncertainty_src"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"GPC-uncertainty"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"GPC-spec..."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>The GPC measurement data for polymer molecular weight distribution</p>
+
+<p><strong>Object Fields</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>I</td>
+<td>array of number</td>
+<td>required</td>
+<td>measured intensities</td>
+</tr>
+<tr>
+<td>t</td>
+<td>array of number</td>
+<td>required</td>
+<td>retention times. length of the I and t arrays should be identical</td>
+</tr>
+<tr>
+<td>unit_t</td>
+<td>string</td>
+<td>required</td>
+<td>unit for retention time</td>
+</tr>
+<tr>
+<td>calib</td>
+<td>string</td>
+<td>required</td>
+<td>reference to calibration documentation</td>
+</tr>
+<tr>
+<td>unit_I</td>
+<td>string</td>
+<td>optional</td>
+<td>unit for intensity</td>
+</tr>
+<tr>
+<td>method</td>
+<td>string</td>
+<td>optional</td>
+<td>specifications of the GPC</td>
+</tr>
+<tr>
+<td>uncertainty</td>
+<td>array of number</td>
+<td>optional</td>
+<td>the uncertainty of each intensity</td>
+</tr>
+<tr>
+<td>uncertainty_src</td>
+<td>string</td>
+<td>optional</td>
+<td>an explanation of what the provided uncertainty reflect and how the number/estimation is obtained</td>
+</tr>
+</tbody></table>
+
+<p><strong>Allowed Units for unit_t</strong></p>
+
+<ul>
+<li>s (seconds)</li>
+<li>m (minutes)</li>
+</ul>
+<h2 id='p'>p</h2>
+<blockquote>
+<p>Syntax and usage</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="s2">"p"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"value"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.85</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"IR quantification of residual unreacted functional groups"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"uncertainty"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"uncertainty_src"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"uncertainty in calibration between IR signal and extent of reaction"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>The extent of reaction  </p>
+
+<p><strong>Object Fields</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>value</td>
+<td>number</td>
+<td>required</td>
+<td>the numeric value of the extent of reaction</td>
+</tr>
+<tr>
+<td>uncertainty</td>
+<td>number</td>
+<td>optional</td>
+<td>the uncertainty of the provided value</td>
+</tr>
+<tr>
+<td>uncertainty_src</td>
+<td>string</td>
+<td>optional</td>
+<td>an explanation of what the provided uncertainty reflect and how the number/estimation is obtained</td>
+</tr>
+<tr>
+<td>method</td>
+<td>string</td>
+<td>optional</td>
+<td>how the value is measured or obtained</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="json">BigSMILES Data</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

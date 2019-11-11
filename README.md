@@ -2,39 +2,36 @@
 
 ## What is BigSMILES?
 
-BigSMILES is an open-source project that aims to lay down necessary infrastructure for polymer informatics. With a series of standards and software, the goal of the BigSMILES project is to provide tools that facilitate the communication between chemists, material scientists, cheminformatics researchers and computer scientists, and ultimately leading to more rapid development data-driven polymer research.
+BigSMILES is an open-source effort that aims to lay down necessary infrastructure for polymer informatics. The goal of the BigSMILES project is to provide a series of standards and software that facilitate the communication between chemists, material scientists, cheminformatics researchers and computer scientists, and ultimately leading to more rapid development data-driven polymer research.
 
+Currently, the BigSMILES project is comprised of three major components:
 
-
-Currently, the BigSMILES project is comprised of three major parts:
-
-1. an **open standard** for the ***BigSMILES line notation***, which is an extension to the popular SMILES, or simplified molecular-input line-entry system, line notation that extends the support of SMILES to general polymeric and macromolecular systems,
-2. an **open data format** for reporting polymer characterization accompanying the BigSMILES line notation to specify the physicochemical properties and characterizations of polymeric systems, and
-3. the **open-source software** associated with the line notation and data format.
-
-
-
-Click on the links for more information on the [BigSMILES line notation](#), the polymer [data format](#) or the [associated software](#).
+1. [**BigSMILES line notation**](docs/line_notation.html)  
+   an extension to the popular SMILES line notation that provides support over general polymeric and macromolecular systems
+2. [**BigSMILES data format**](docs/DataFormat.html)  
+   an data format for reporting polymer characterization under the framework of the BigSMILES line notation
+3. **Open-source software**   
+   associated with the line notation and data format. current tools include:
+   * [BigSMILES Builder](https://olsenlabmit.github.io/BigSMILES_builder/): a graphical tool for constructing BigSMILES strings
+   * [BigSMILES Data Form](https://olsenlabmit.github.io/BigSMILES_DataForm/): a form for generating BigSMILES data files
 
 
 
 ## How to get involved?
 
-We recognize that the involvement of the community is critical to the utility and success of the project, and we welcome any comment or suggestion. 
+We recognize that the involvement of the community is critical to the utility and success of the project. Any comment, suggestion or contribution is welcomed and appreciated. 
 
+To suggest new features, report bugs or provide comments, please leave a comment at our [Github Page](https://github.com/olsenlabmit/BigSMILES).
 
-
-To suggest new features, report bugs or provide comments, please Comment 
-
-
-
-If you would like to contribute, please contact us at <bigsmiles-email@mit.edu>. To add modules or new features, we also welcome you to directly fork the project and send us pull requests. 
+If you would like to contribute, please contact [Dr. Bradley Olsen](mailto:bdolsen@mit.edu).  
 
 
 
 ## Who's behind the project?
 
-The BigSMILES project is initiated by the Center for the Chemistry of Molecularly Optimized Networks (MONET), an NSF Center for Chemical Innovation. Contributors include :
+The BigSMILES project is managed by the Olsen Lab at Massachusetts Institute of Technology
+
+The project is initiated by the Center for the Chemistry of Molecularly Optimized Networks (MONET), an NSF Center for Chemical Innovation. Contributors include :
 
 - Olsen Lab (MIT Chemical Engineering)
 - Jensen Lab (MIT Chemical Engineering)
@@ -43,11 +40,9 @@ The BigSMILES project is initiated by the Center for the Chemistry of Molecularl
 - Johnson Lab (MIT Chemistry)
 - Craig Lab (Duke Chemistry)
 
-and the project is currently managed by the Olsen Lab. 
-
 
 
 ## Citing BigSMILES
 
-If you find BigSMILES useful in your research, please cite the BigSMILES article at *ACS Cent. Sci.*2019XXXXXXXXXX-XXX
+If you find BigSMILES useful, please cite the BigSMILES article at  [*ACS Cent. Sci.* 2019, 5, 9, 1523-1531.](https://pubs.acs.org/doi/10.1021/acscentsci.9b00476)
 

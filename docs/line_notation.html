@@ -1,0 +1,1070 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>BigSMILES Line Notation</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen-a1ce949a.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-bccf8c07.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-c5541673.js"></script>
+  </head>
+
+  <body class="line_notation" data-languages="[&quot;plaintext&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-76490add.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="plaintext">BigSMILES Examples</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#the-bigsmiles-line-notation" class="toc-h1 toc-link" data-title="The BigSMILES Line Notation">The BigSMILES Line Notation</a>
+          </li>
+          <li>
+            <a href="#syntax" class="toc-h1 toc-link" data-title="Syntax">Syntax</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#bonding-descriptors" class="toc-h2 toc-link" data-title="Bonding Descriptors">Bonding Descriptors</a>
+                  </li>
+                  <li>
+                    <a href="#stochastic-object" class="toc-h2 toc-link" data-title="Stochastic Object">Stochastic Object</a>
+                  </li>
+                  <li>
+                    <a href="#examples" class="toc-h2 toc-link" data-title="Examples">Examples</a>
+                  </li>
+                  <li>
+                    <a href="#simplifications-and-abbreviations" class="toc-h2 toc-link" data-title="Simplifications and Abbreviations">Simplifications and Abbreviations</a>
+                  </li>
+                  <li>
+                    <a href="#ladder-polymers" class="toc-h2 toc-link" data-title="Ladder Polymers">Ladder Polymers</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#special-topics" class="toc-h1 toc-link" data-title="Special Topics">Special Topics</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#tacticity" class="toc-h2 toc-link" data-title="Tacticity">Tacticity</a>
+                  </li>
+                  <li>
+                    <a href="#geometric-isomers" class="toc-h2 toc-link" data-title="Geometric Isomers">Geometric Isomers</a>
+                  </li>
+                  <li>
+                    <a href="#polyelectrolytes" class="toc-h2 toc-link" data-title="Polyelectrolytes">Polyelectrolytes</a>
+                  </li>
+                  <li>
+                    <a href="#branched-polymers-and-polymer-networks" class="toc-h2 toc-link" data-title="Branched Polymers and Polymer Networks">Branched Polymers and Polymer Networks</a>
+                  </li>
+                  <li>
+                    <a href="#dynamic-topological-and-physical-bonds" class="toc-h2 toc-link" data-title="Dynamic, Topological and Physical Bonds">Dynamic, Topological and Physical Bonds</a>
+                  </li>
+                  <li>
+                    <a href="#macrocycles" class="toc-h2 toc-link" data-title="Macrocycles">Macrocycles</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#version-history" class="toc-h1 toc-link" data-title="Version History">Version History</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#version-1-1" class="toc-h2 toc-link" data-title="version-1.1">version-1.1</a>
+                  </li>
+                  <li>
+                    <a href="#version-1-0" class="toc-h2 toc-link" data-title="version-1.0">version-1.0</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='index.html'>BigSMILES Project</a></li>
+            <li><a href='line_notation.html'>BigSMILES Line Notation</a></li>
+            <li><a href='DataFormat.html'>BigSMILES Data Format</a></li>
+            <li><a href='https://github.com/olsenlabmit/bigSMILES'>GitHub</a></li>
+            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='the-bigsmiles-line-notation'>The BigSMILES Line Notation</h1>
+<blockquote>
+<p>The BigSMILES string for ethylene and methyl methacrylate copolymer:</p>
+
+<p><img src="images/Demo1-9425d50e.png" alt="alt text" width="50%;" /></p>
+</blockquote>
+
+<p>BigSMILES is a structurally based line notation based on the highly successful SMILES (simplified molecular-input line-entry system) representation.  It provides extensions over regular SMILES, which can only represent molecules with given deterministic molecular structures, and support the representation of molecules that are characterized by a distribution of distinct molecular structures instead of a single well-defined structure. This feature is designed specifically to reflect the stochastic nature of polymer molecules. Since polymers are macromolecules that usually have large molecular weights, the line notation is termed BigSMILES.</p>
+
+<aside class="notice">
+Please note that the BigSMILES line notation continually revised to provide additional features and important bug fixes. This page hosts the latest version of BigSMILES, which may differ from the syntax discussed in the <a href="https://pubs.acs.org/doi/10.1021/acscentsci.9b00476">original paper</a>. <br/>
+The current version is v1.1. Please check the <a href="#version-history">version history</a> for the detailed log of changes.
+</aside>
+
+<p>This article is meant as an documentation for the BigSMILES syntax. The reader is assumed to be familiar with the SMILES syntax. If you are not familiar with the syntax of SMILES, this Daylight CIS <a href="https://daylight.com/dayhtml/doc/theory/theory.smiles.html">page</a> provides a great introduction to the subject.</p>
+
+<p>For additional examples, this <a href="BigSMILES_examples.md#Examples-of-BigSMILES-Encoding">page</a> provides examples of how BigSMILES can be used to encode common commodity polymers and polymers selected from literature with complex structures.</p>
+<h1 id='syntax'>Syntax</h1>
+<p>The syntax of BigSMILES is identical to SMILES except for the introduction of the following new objects:</p>
+
+<ol>
+<li>the stochastic object, and</li>
+<li>the bonding descriptors</li>
+</ol>
+
+<p>The <strong><em>stochastic object</em></strong> is the principle extension that enables the enumeration of stochastic molecular structures. A stochastic object represents a family of polymeric fragments. It could be used as if it was a normal atom and be embedded within SMILES strings as a proxy atom that symbolizes the ensemble of polymeric fragments that it implicitly represents. </p>
+
+<p><img src="images/StoObj1-b4338d98.png" alt="alt text" width="100%;" /></p>
+
+<p>The family of structures a stochastic object represent is defined by the building blocks, or repeat units, of the polymeric segment. Within a stochastic object, one or more repeat units are tabulated, and the pattern by which the repeat units can interconnect with each other are specified. In BigSMILES, such connectivity patterns are denoted by attaching <strong><em>bonding descriptors</em></strong> to atoms to indicate where and how a pair of atoms on two repeat units can be joined into a larger molecular fragment. The syntax for the bonding descriptors and stochastic objects will be introduced in subsequent sections.</p>
+<h2 id='bonding-descriptors'>Bonding Descriptors</h2>
+<p>To specify where and how repeat units can be joined with another repeat unit, the bonding descriptors are introduced. Bonding descriptors are placed on atoms of a repeat unit that could form direct bonds with another repeat unit.</p>
+
+<p><img src="images/BondDesc1-cfba5f0f.png" alt="alt text" width="80%;" /></p>
+
+<p>For instance, as illustrated by the figure, on a methyl methacrylate repeat unit, the two backbone carbon atoms that connect with other repeat units each has a bonding descriptor attached to it; similarly, for a glycine repeat unit, the nitrogen and carbon atoms on the two termini also have bonding descriptors directly attached, indicating that they are terminal atoms that connect to other repeat units.</p>
+
+<p>In BigSMILES, there are two types of bonding descriptors:</p>
+
+<ol>
+<li>The &quot;<code>$</code>&quot; descriptor, or AA-type descriptor<br>
+This descriptor describes the connective pattern in which any atom with a &quot;<code>$</code>&quot; descriptor can connect with any other atom with the same bonding descriptor. </li>
+<li>The &quot;<code>&lt;</code>&quot; and &quot;<code>&gt;</code>&quot; descriptors, or AB-type descriptor<br>
+This pair of descriptors describes the connective pattern in which the atoms with the &quot;<code>&lt;</code>&quot; descriptor could only connect with another atom with the conjugate &quot;<code>&gt;</code>&quot; descriptor. </li>
+</ol>
+<h3 id='aa-type-descriptor'>AA-Type Descriptor</h3>
+<blockquote>
+<p>The bonding descriptors can be written as if they are atoms. For example, the ethylene repeat unit for the poly(ethylene-butene) example reads</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>[$]-CC-[$] or [$]CC[$] 
+</code></pre>
+<blockquote>
+<p>For the butene repeat unit, its BigSMILES read</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>[$]CC(CC)[$]
+</code></pre>
+<blockquote>
+<p>In general, the repeat unit can be rewritten without the bonding descriptors being at the ends of the string. For instance, the following BigSMILES string</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>C([$])C([$])CC
+</code></pre>
+<blockquote>
+<p>represents the exact same butene repeat unit.</p>
+</blockquote>
+
+<p>The AA-type of descriptor is useful for describing the connectivity pattern for vinyl polymers, in which the backbone carbon atoms can connect any other vinyl carbon (although some configurations are unlikely). 
+<img src="images/descriptorDemo1-0e61e5a0.png" alt="alt text" style="zoom:40%;" />
+For instance, the use of the AA-type descriptor can be illustrated by the example of poly(ethylene-butene). As illustrated in the figure, the polymer is represented by two repeat units, the ethylene and butene units. Since any pair of atoms with a <code>$</code> descriptor could be joined to form a dimer, for this polymer, there are 6 possible distinct dimers that could be constructed from the repeat units, as tabulated on the right panel. These dimers can be further joined with other repeat units or higher order oligomers to generate other polymeric fragments.</p>
+<h3 id='ab-type-descriptor'>AB-Type Descriptor</h3>
+<blockquote>
+<p>AB-type descriptor has syntax similar to the AA-type descriptor. For example, the repeat units for the first nylon-6,6 are</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>[&lt;]C(=O)CCCCC(=O)[&lt;] and [&gt;]NCCCCCCN[&gt;]
+</code></pre>
+<blockquote>
+<p>whereas the second nylon example reads</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>[&lt;]C(=O)CCCCC(=O)NCCCCCCN[&gt;]
+</code></pre>
+<blockquote>
+<p>Another instance where the AB-type bonding descriptors become useful is polymers synthesized through ring-opening polymerization. For example, poly(ethylene glycol) repeat unit would read</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>[&lt;]CCO[&gt;] or [&gt;]CCO[&lt;]
+</code></pre>
+<blockquote>
+<p><img src="images/PEG-c6c97416.png" alt="alt text" width="25%;" /></p>
+</blockquote>
+
+<p>The AB-type descriptors are useful in describing polymers formed via polycondensation. 
+<img src="images/descriptorDemo2-f819b5dc.png" alt="alt text" style="zoom:40%;" /></p>
+
+<p>For instance, nylon-6,6 formed from condensation between amine and carboxylic groups are best described by the <code>&lt;</code> and <code>&gt;</code> descriptors, which ensure that the nitrogen atoms always connect with the carbon atoms, in accordance with the chemistry.</p>
+
+<aside class="notice">
+It should be noted that the connectivity pattern specified by bonding descriptors include all "possible" realizations. The descriptors do not indicate whether such connection is likely or not. As detailed in the next section, the descriptors, together with the stochastic object, describes an "unweighted" ensemble of all possible molecular fragments.
+</aside>
+<h3 id='syntax-for-bonding-descriptors'>Syntax for Bonding Descriptors</h3>
+<blockquote>
+<p>Bonding descriptors can be embedded within BigSMILES strings just like atoms. For instance, a (hypothetical) ethylene unit with two orthogonal bonding descriptors reads</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>[$1]-CC-[$2] or [$1]CC[$2] or C([$1])C[$2]
+</code></pre>
+<blockquote>
+<p>A repeat unit can have more than two atoms that are connected to a bonding descriptor. For instance, consider branched poly(ethylene). A branched PE would be consisted of repeat units with 2 bonding descriptors (linear), 3 bonding descriptor (branching site) or even more descriptors.</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>[$]-CC-[$] (linear unit),  [$]-CC([$])-[$] (branched unit)
+</code></pre>
+<blockquote>
+<p>In the previous examples, the SMILES bonds leading up to the bonding descriptors were all single bonds. This implies that when two repeat units are joined into a dimer, the bond between the pair of atoms would be a single bond as well. </p>
+
+<p>To represent polymers with double bond across repeat units, a similar syntax is used</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>[$]=CCC=[$]
+</code></pre>
+<blockquote>
+<p><img src="images/descriptorDemo3.png" alt="alt text" width="25%;" /></p>
+</blockquote>
+
+<p>Formally speaking, within BigSMILES strings, the bonding descriptor are denoted with the following syntax:</p>
+
+<p><code>bonding_descriptor = &#39;[&#39; + descriptor_type + descriptor_id + &#39;]&#39;</code></p>
+
+<p>A bonding descriptor is composed of three components:</p>
+
+<ol>
+<li>A bonding descriptor is enclosed by a pair of square brackets.</li>
+<li>The <code>descriptor_type</code>, immediately following the opening bracket. 
+
+<ul>
+<li>The <code>descriptor_type</code> can be one of the three symbols: &quot;<code>$</code>&quot;, &quot;<code>&lt;</code>&quot; or &quot;<code>&gt;</code>&quot;</li>
+</ul></li>
+<li>The <code>descriptor_id</code> of the descriptor, denoted by a number</li>
+</ol>
+
+<p>The <code>descriptor_id</code> is an additional label for specifying multiple sets of chemically orthogonal bonding descriptors. Descriptors only recognize other descriptors with identical id; atoms connected to descriptors with different labels cannot be joined. If there is only a single type of descriptor, the descriptor id may be omitted.</p>
+
+<aside class="notice">
+The id for $ and &gt;,&lt; are implicitly considered orthogonal; i.e., $1 do not connect with either &lt;1 or &gt;1. However, while it is permissible to reuse the same id/label between the two types of descriptors, it is recommended that distinct label be used for each distinct descriptor to prevent potential confusion.
+</aside>
+
+<p>Within a BigSMILES string, the bonding descriptors share the same syntax as normal SMILES atoms. The SMILES bond symbol between an atom and its associated bonding descriptor is interpreted as the type of bond that will be created when two atoms are joined together to form a larger fragment. Therefore, the bond order for the bond leading up to the bonding descriptor must be consistent throughout all occurrences in every repeat unit.</p>
+
+<aside class="warning">
+The bonding descriptor syntax has been updated and is different from the <a href="https://pubs.acs.org/doi/10.1021/acscentsci.9b00476">version 1.0 presented in ACS Central Science</a>.
+</aside>
+<h2 id='stochastic-object'>Stochastic Object</h2>
+<p>SMILES provides a linearization scheme for chemical graphs. However, in general, chemical graphs with deterministic structures are not the best model for describing polymers, which are intrinsically random molecules that represent an ensemble of different chemical connectivity. To embrace such stochastic nature, BigSMILES introduces the notion of <strong><em>stochastic objects</em></strong>. Stochastic objects are the key component that provides support for stochastic structures. They are entities that represent random chemical structures that corresponds to polymeric segments within molecules. Syntax-wise, a stochastic object&#39;s behavior is identical to that of SMILES atoms. Therefore, stochastic objects can be embedded within a regular SMILES string as if they are normal atoms. </p>
+
+<aside class="notice">
+For the current version, stochastic objects are allowed maximal valency of two. 
+</aside>
+<h3 id='syntax-for-stochastic-objects'>Syntax for Stochastic Objects</h3>
+<blockquote>
+<p>For the poly(ethylene-butene) example illustrated in earlier section, the stochastic object that represents the uncapped polymeric fragments that are composed of the two repeat units read</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>{[][$]CC[$],[$]CC(CC)[$][]}
+</code></pre>
+<blockquote>
+<p>The &quot;empty&quot; terminal bonding descriptors indicate that the stochastic object does not have any connection to explicit end groups. </p>
+
+<p>Similarly, nylon-6,6 can be represented as</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>{[][&lt;]C(=O)CCCCC(=O)[&lt;],[&gt;]NCCCCCCN[&gt;][]}
+</code></pre>
+<blockquote>
+<p>for the polymer synthesized from adipic acid and hexamethylenediamine. </p>
+
+<p>For nylon synthesized from amino acid, the BigSMILES reads</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>{[][&lt;]C(=O)CCCCC(=O)NCCCCCCN[&gt;][]}
+</code></pre>
+<p>A stochastic object acts as an proxy within a SMILES string and represents a polymeric segment with stochastic structure. The exact ensemble of structures that a stochastic object represent is defined by is constituent <strong>repeat units</strong> and <strong>end groups</strong>. The syntax for stochastic is given by </p>
+
+<p><code>stochastic_object = &#39;{&#39; + &#39;[&#39; + terminal_bonding_descriptor + &#39;]&#39; + repeat_unit_1 + &#39;,&#39; + repeat_unit_2 + &#39;,&#39; + ... + &#39;,&#39; + repeat_unit_n + &#39;;&#39; + end_group_1 + &#39;,&#39; + end_group_2 + &#39;,&#39; + ... + &#39;,&#39; + end_group_m + &#39;[&#39; + terminal_bonding_descriptor + &#39;]&#39; + &#39;}&#39;</code></p>
+
+<p>Each stochastic object contains the following sections:</p>
+
+<ol>
+<li>A pair of curly brackets &quot;<code>{</code>&quot; and &quot;<code>}</code>&quot; that encloses the inner components. The entire object wrapped within the brackets <code>{...}</code> are syntactically treated as if it is a normal atom.</li>
+<li>A comma-delimited list of <code>repeat_unit</code>s. 
+
+<ul>
+<li>This list contains the set of building blocks that could be used to construct oligomeric and polymeric fragments. </li>
+<li>Each <code>repeat_unit</code> within the list is represented by a BigSMILES string that contains two or more bonding descriptors. </li>
+<li>The stochastic object represents the entire ensemble of polymeric fragments that could be generated by interconnecting the repeat units into larger fragments. Note that each repeat unit within the list can be used zero, one or multiple times.</li>
+<li>All possible ways of interconnecting a pair of repeat units, by means of joining two smaller molecular graphs into a larger molecular graph, that are permissible by the prescribed bonding descriptors are allowed. 
+As illustrated by the example on the example panel, repeat units need not connect in the orientation depicted in the repeat units. Repeat units can be flipped or reoriented </li>
+</ul></li>
+<li>A comma-delimited list of <code>end group</code>s. The end group list is separated from the repeat unit list by a semicolon. 
+
+<ul>
+<li>Each end group within the list should contain exactly one bonding descriptor.</li>
+<li>If no end group is to be specified, the leading semicolon can be omitted.</li>
+</ul></li>
+<li>Two <code>terminal_bonding_descriptors</code> placed immediately within the curly brackets.<br>
+
+<ul>
+<li>The terminal bonding descriptor indicate how the internal stochastic structure is connected to the exterior of the stochastic object (to the regular SMILES strings immediately leading and trailing the stochastic object).<br></li>
+<li>Whenever an end of the stochastic object is capped with external SMILES string, the terminal bonding descriptor must be specified.<br></li>
+<li>Moreover, even in the case where the end of the stochastic object is not capped by an external SMILES fragment, the &quot;empty&quot; bonding descriptor &quot;<code>[]</code>&quot; should still be explicitly included to indicate the absence of such connection.</li>
+</ul></li>
+</ol>
+
+<aside class="warning">
+The terminal bonding descriptor syntax has been updated and is different from the <a href="https://pubs.acs.org/doi/10.1021/acscentsci.9b00476">version 1.0 presented in ACS Central Science</a>.
+</aside>
+<h3 id='end-groups'>End Groups</h3>
+<blockquote>
+<p>Consider the ethylene butene copolymer example. For a BigSMILES string that reads</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>{[][$]CC[$],[$]CC(CC)[$][]}
+</code></pre>
+<blockquote>
+<p>the &quot;empty&quot; terminal bonding descriptors indicate that the stochastic object does not have any connection to explicit end groups. In this case, since no implicit end groups were assigned, the BigSMILES string represents a uncapped fragment.</p>
+
+<p>Now, consider the case</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>C{[$][$]CC[$],[$]CC(CC)[$][$]}
+</code></pre>
+<blockquote>
+<p>The left end in this case has explicit end group of one carbon. Moreover, since the right terminal descriptor is non-empty, it indicates that the other end of the stochastic object is also connected to some exterior SMILES string. For this case, the &quot;invisibility&quot; of the SMILES string suggests that it is connected to a hydrogen atom, which is omitted by default in SMILES syntax.</p>
+
+<p>To further illustrate the syntax for end groups, consider again the nylon-6,6 example. The end groups for the linear polymer can be expressed with the explicit syntax</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>[H]O{[&gt;][&lt;]C(=O)CCCCC(=O)[&lt;],[&gt;]NCCCCCCN[&gt;][&lt;]}[H]
+</code></pre>
+<blockquote>
+<p>or with the implicit syntax</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>{[][&lt;]C(=O)CCCCC(=O)[&lt;],[&gt;]NCCCCCCN[&gt;];[&gt;]O[H],[&lt;][H][]}
+</code></pre>
+<blockquote>
+<p>Note that the terminal bonding descriptors should still be included even if they are empty</p>
+
+<p>The same polymer can also be expressed with the mixed explicit and implicit representation:</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>[H]O{[&gt;][&lt;]C(=O)CCCCC(=O)[&lt;],[&gt;]NCCCCCCN[&gt;];[&lt;][H][]}
+</code></pre>
+<blockquote>
+<p>To illustrate the use of end groups in branched polymers, consider the following hyperbranched polymer </p>
+
+<p><img src="images/descriptorDemo5-33407131.png" alt="alt text" style="zoom:40%;" /></p>
+
+<p>The polymer has exactly one end with boron end group, and all the other ends are capped by bromide. This end group pattern can be expressed by the implicit style or the mixed style</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>{[][&lt;]c1cc([&gt;])cc([&gt;]c1);[&lt;]Br,[&gt;]B(O)O[]} (implicit)
+OB(O){[&gt;][&lt;]c1cc([&gt;])cc([&gt;]c1);[&lt;]Br[]} (mixed)
+</code></pre>
+<blockquote>
+<p>Note that the bromide end group cannot be specified explicitly because the number of bromide ends are not a fixed number but rather depends on the exact enumeration of the polymeric structure.</p>
+</blockquote>
+
+<p>As implied in the syntax, there are two equally valid options for reporting the end groups for a polymeric segment represented by a stochastic object:</p>
+
+<ol>
+<li>Explicit SMILES strings leading or trailing a stochastic object. </li>
+<li>End groups specified within the list of end groups within the stochastic object.</li>
+</ol>
+
+<p><strong>Explicit End Groups</strong></p>
+
+<p>In the first case, the BigSMILES string is interpreted as the following figure,</p>
+
+<p><img src="images/endGroup1-7aed9881.png" alt="alt text" style="zoom:30%;" /></p>
+
+<p>in which the terminal bonding descriptors are effectively attached to the atoms on the exterior SMILES string to serve as end groups. Each end group in this case corresponds to exactly one copy that caps one   open end of the polymeric fragment.</p>
+
+<p>Similar to the case for bonding descriptors found within repeat units, the SMILES bond symbol leading and trailing the stochastic objects are interpreted as the type of bond that should be formed when the atom on the explicit end group is joined with an atom on a repeat unit. Therefore, the leading and trailing bonds must be consistent with the bonding descriptors defined on the repeat units within the stochastic object.</p>
+
+<p><strong>Implicit End Group within Stochastic Object</strong></p>
+
+<p>In the second case, the end groups in the list are allowed to cap the open ends (atoms with unclosed bonding descriptors). If multiple end groups with identical bonding descriptors are present, the stochastic object implicitly include all possible molecular graphs. Note that all ends on the molecular fragment constructed by joining repeating units will be considered capped when end groups are specified. Only the ends without suitable end groups will be considered uncapped. </p>
+
+<p><img src="images/endGroup2-6f2ac80e.png" alt="alt text" style="zoom:30%;" /></p>
+
+<p>Note that unlike the explicit case, there may be multiple copy of each end group used in capping the polymeric fragment. This notation is especially useful in denoting the end groups of randomly branching polymers, in which the number of end groups required is not a fixed number, and therefore cannot be a priori specified.</p>
+
+<p><strong>Mixed Explicit and Implicit End Groups</strong></p>
+
+<p>In the case where a stochastic object with non-empty end group list also has explicit terminal end groups, the explicit end groups take precedence. That is, the explicit end groups will always be considered first to cap the open ends; after all explicit ends have been utilized, the remaining open ends are capped with the end groups defined within the stochastic object. This interpretation is illustrated by practical examples on the example panel.</p>
+
+<p>Depending on the context, the two representations may be more preferable than the other. </p>
+<h2 id='examples'>Examples</h2>
+<p>In this section, how BigSMILES could be used to represent several patterns commonly found in polymers is illustrated. Several useful features, such as the nesting of BigSMILES stochastic objects, would also be introduced.</p>
+<h3 id='random-copolymer'>Random Copolymer</h3>
+<blockquote>
+<p>Example of random copolymer </p>
+
+<p><img src="images/Demo2-563d1856.png" alt="alt text" width="20%;" /></p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>{[][$]CC(C#N)[$],[$]CC(c1ccccc1)[$][]}
+</code></pre>
+<p>In general, random copolymers can be easily encoded by having multiple repeat units within the same stochastic object. </p>
+
+<p><img src="images/pattern1-1d6b3629.png" alt="alt text" style="zoom:30%;" /></p>
+<h3 id='block-copolymer'>Block Copolymer</h3>
+<blockquote>
+<p>Example of block copolymer </p>
+
+<p><img src="images/Demo3-25afdbbe.png" alt="alt text" width="25%;" /></p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>{[][&lt;]OCC[&gt;][&lt;]}{[&gt;][&lt;]OC(C)C[&gt;][]}
+</code></pre>
+<blockquote>
+<p>Note that in this case, the &quot;end group&quot; for each of the polymeric segment is another polymer segment.</p>
+</blockquote>
+
+<p>Block copolymers can be constructed by having more than one stochastic objects in sequence.</p>
+
+<p><img src="images/pattern2-d326bc0a.png" alt="alt text" style="zoom:30%;" /></p>
+
+<p>Since syntax-wise stochastic objects behave just like atoms, multiple blocks can be readily represented by concatenating multiple stochastic objects.</p>
+<h3 id='alternating-polymer'>Alternating Polymer</h3>
+<blockquote>
+<p>Example of  alternating copolymer </p>
+
+<p><img src="images/Demo4-cffed08e.png" alt="alt text" width="30%;" /></p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>{[][&lt;]C(=O)c1ccc(cc1)C(=O)[&lt;],[&gt;]OCCO[&gt;][]}
+</code></pre>
+<p>Alternating polymer can be constructed by having two repeating units, with one unit containing only the <code>&lt;</code> descriptor, and the other containing only the <code>&gt;</code> descriptor.</p>
+
+<p><img src="images/pattern3-adfb9fbd.png" alt="alt text" style="zoom:30%;" /> </p>
+<h3 id='branched-polymer'>Branched Polymer</h3>
+<blockquote>
+<p>Polyethylene with branching reads</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>{[][$]CC[$],[$]CC([$])[$][]}
+</code></pre>
+<p>Branched polymer can be obtained by including repeat units with more than two bonding descriptors.</p>
+
+<p><img src="images/pattern4-afb5339d.png" alt="alt text" style="zoom:30%;" /></p>
+<h3 id='polymer-graft'>Polymer Graft</h3>
+<blockquote>
+<p>Example of polymer graft</p>
+
+<p><img src="images/Demo5-24e5ba83.png" alt="alt text" width="20%;" /></p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>{[][$]CC(C)(C)[$],[$]CC(c1ccc(cc1)C{[$][$]CC(C)(C(=O)OC)[$][$]}Br)[$][]}
+</code></pre>
+<p>Polymer graft can be encoded by including repeat units that contain macromolecular pendant groups.</p>
+
+<p><img src="images/pattern5-067f42f5.png" alt="alt text" style="zoom:30%;" /></p>
+
+<p>Since syntax-wise stochastic objects behave just like atoms, the graft can be represented as a stochastic object nested within the outer stochastic object.</p>
+<h3 id='macromonomer'>Macromonomer</h3>
+<blockquote>
+<p>Example of polyurethane with oligomer chain extenders</p>
+
+<p><img src="images/Demo6-c720c750.png" alt="alt text" width="55%;" /></p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>{[][&gt;]C(=O)Nc1ccc(C)c(c1)NC(=O)[&gt;],[&lt;]OCC{[&lt;][&gt;]OCC[&lt;][&gt;]}O[&lt;],[&lt;]OCCCO[&lt;][]}
+</code></pre>
+<p>Polymer synthesized from macromonomers can be easily represented by including repeat units that contains stochastic objects.</p>
+
+<p><img src="images/pattern6-34fd05a2.png" alt="alt text" style="zoom:30%;" /></p>
+
+<p>Since syntax-wise stochastic objects behave just like atoms, the macromonomer can be represented as a stochastic object nested within the outer stochastic object.</p>
+<h2 id='simplifications-and-abbreviations'>Simplifications and Abbreviations</h2>
+<p>To increase the readability of BigSMILES strings, several simplification schemes are introduced on top of the BigSMILES syntax. It should be noted that these are considered simplified conventions, and should not be considered as part of the formal syntax of the BigSMILES line notation.</p>
+<h3 id='simplification-for-aa-type-descriptors'>Simplification for AA-Type Descriptors</h3>
+<blockquote>
+<p>The simplification for AA-type descriptor is especially useful for vinyl polymers. For instance, the poly(ethylene-butene) example can be simplified into</p>
+</blockquote>
+<pre class="highlight plaintext"><code>{[][$]CC[$],[$]CC(CC)[$][]} (full)
+{[]CC,CC(CC)[]} (simplified)
+</code></pre>
+<p>In the case when a stochastic object:</p>
+
+<ol>
+<li>contains only AA-type bonding descriptors (no AB-type)</li>
+<li>contains only one AA-type descriptor</li>
+<li>the bond order associated with the descriptor is 1</li>
+<li>every repeat unit has at least two bonding descriptors</li>
+<li>the BigSMILES string for every repeat unit is written so that the string starts with a descriptor and ends with a descriptor</li>
+</ol>
+
+<p>then the descriptors at the ends of the repeat units can be omitted. This convention can greatly simplify the expression for vinyl polymers.</p>
+<h3 id='simplification-for-ab-type-descriptors'>Simplification for AB-Type Descriptors</h3>
+<blockquote>
+<p>The simplification for AB-type descriptor is especially useful for polymers such as poly(amino acid). For instance, a glycine alanine copolymer, the simplification reads</p>
+
+<p><img src="images/descriptorDemo4-449582fb.png" width="30%;" /></p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>O{[&gt;][&lt;]C(=O)C(C)N[&gt;],[&lt;]C(=O)CN[&gt;][&lt;]} (full)
+O{[&gt;]C(=O)C(C)N,C(=O)CN[&lt;]} (simplified)
+</code></pre>
+<blockquote>
+<p>However, it should be noted that if the original polymer is written as</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>{[&lt;][&lt;]C(=O)C(C)N[&gt;],[&lt;]C(=O)CN[&gt;][&gt;]}O (cannot be simplified)
+</code></pre>
+<blockquote>
+<p>then this BigSMILES string cannot be simplified because condition 7 is not satisifeed. To express the polymer under this end group configuration, the repeat units must be &quot;flipped&quot;:</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>{[&lt;][&gt;]NC(C)C(=O)[&lt;],[&gt;]NCC(=O)[&lt;][&gt;]}O (full)
+{[&lt;]NC(C)C(=O),NCC(=O)[&gt;]}O (full)
+</code></pre>
+<p>In the case when a stochastic object:</p>
+
+<ol>
+<li>contains only AB-type bonding descriptors</li>
+<li>contains only one AB-type descriptor</li>
+<li>the bond order associated with the descriptor is 1</li>
+<li>every repeat unit has exactly one descriptor of <code>&lt;</code> type and one of <code>&gt;</code> type</li>
+<li>the BigSMILES string for every repeat unit is written so that the string starts with a descriptor and ends with a descriptor</li>
+<li>every repeat unit starts with the same descriptor (all starts with <code>&gt;</code> or all starts with <code>&lt;</code>) and ends with the other descriptor</li>
+<li>at least one terminal bonding descriptor is specified, and the terminal descriptors correspond to the configuration in which the repeat units can be directly concatenated with the explicit end groups in the given orientation (without flipping).</li>
+</ol>
+
+<p>then the descriptors at the ends of the repeat units can be omitted. This convention can greatly simplify the expression for polymers such as poly(amino acids). </p>
+<h3 id='fragment-name-definition-notation'>Fragment Name Definition Notation</h3>
+<blockquote>
+<p>The fragment name definition can be useful for polymers with complex pendant groups. For example, the readability of the BigSMILES encoding could be greatly increased for the following polymer by replacing the complex side group</p>
+
+<p><img src="images/Fragment1-0b997939.png" width="30%;" /></p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>{[][$]CC(C)([#R])[$][]}.{#R=C(=O)OCC12CC(C3)CC(C1)CC3C2}
+</code></pre>
+<blockquote>
+<p>The fragment name definition is also useful when there are repetitive structures within the polymer</p>
+
+<p><img src="images/Fragment2-24e0f845.png" width="40%;" /></p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>C([#Arm])([#Arm])([#Arm])[#Arm].{#Arm=CO{[&lt;][&gt;]CCO[&lt;][&gt;]}}
+</code></pre>
+<p>In some cases, it might be more beneficial to have some portions of the BigSMILES representations be replaced by more abstract but compact proxies, for example, the names of repeating units. This is especially helpful when the structure is complex, and the resulting BigSMILES representation becomes long. </p>
+
+<p>To facilitate understanding, a definition of molecular fragments that associate user-defined names with partial BigSMILES strings is allowed in BigSMILES. Within a BigSMILES string, a segment of the string can be replaced by a placeholder object with the following syntax:</p>
+
+<p><code>&#39;[&#39; + &#39;#&#39; + fragment_name + &#39;]&#39;</code></p>
+
+<p>The <code>fragment_name</code> should consist of only printable ASCII symbols (excluding whitespace characters). </p>
+
+<p>In principle, as long as stochastic objects entirely contained, any segment can be replaced by such placeholder. However, it is recommended that bonding descriptors (except for those bracketed within a stochastic object) not be replaced and be left explicit within a BigSMILES string to avoid misleading expressions.</p>
+
+<p>In general, the definition for each placeholder fragment name used within a BigSMILES string must be given at the end of the BigSMILES string. The syntax for such definition is:</p>
+
+<p><code>&#39;.&#39; + &#39;{&#39; + &#39;#&#39; + fragment_name + &#39;=&#39; + BigSMILES_string + &#39;}&#39;</code></p>
+
+<p>each fragment definition is enclosed within a pair of curly brackets, and each definition is separated by dots (<code>.</code>). Combining the placeholder and definition sections, the full syntax for the fragment name definition notation reads:</p>
+
+<p><code>BigSMILES_string + &#39;[&#39; + &#39;#&#39; + fragment_name + &#39;]&#39; + BigSMILES_string + &#39;.&#39; + &#39;{&#39; + &#39;#&#39; + fragment_name + &#39;=&#39; + BigSMILES_string + &#39;}&#39;</code></p>
+
+<p>The only exception for the need of such explicit definition is when the placeholder is one of the common repeat units that has been defined in this <a href="#">repository</a>. These fragment names can be used without further re-definition.</p>
+<h2 id='ladder-polymers'>Ladder Polymers</h2>
+<blockquote>
+<p>To illustrate the usage of the multiatom bonding descriptor, consider the following example:</p>
+
+<p><img src="images/multiatom1-27626283.png" width="20%;" /></p>
+
+<p>The polymer is a ladder polymer with two parallel AB type bonds between each repeating unit. </p>
+
+<p>First, since the two B moieties always connect to the same repeat unit, the bonding descriptor for them share the same group id. Similarly, the bonding descriptors on the A moieties share the same group id. (Choose <code>group_id</code>=1 for A and 2 for B).</p>
+
+<p>Since the overall connectivity between the two groups are of the AB type, the outer descriptor type is denoted by the <code>&lt;</code> and <code>&gt;</code> symbols. Hence, the outer bonding descriptors have the form:</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>A([&lt;1[Inner]1])R(A[&lt;1[Inner]1])(B[&gt;1[Inner]2])B[&gt;1[Inner]2]
+</code></pre>
+<blockquote>
+<p>For the inner layer, since individual atoms are also of AB-type, the inner bonding descriptor are also denoted by the  <code>&lt;</code> and <code>&gt;</code> descriptors. Therefore, the complete ladder bonding descriptor reads</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>A([&lt;1[&lt;1]1])R(A[&lt;1[&lt;1]1])(B[&gt;1[&gt;1]2])B[&gt;1[&gt;1]2]
+</code></pre>
+<blockquote>
+<p>To provide more illustrations on how the inner layer should be written, consider another example:</p>
+
+<p><img src="images/multiatom2-0ac8e0eb.png" width="20%;" /></p>
+
+<p>In this case, instead of having AB type bonds, the ladder polymer have a overall AA type connectivity in which the repeating units can be flipped arbitrarily. Owning to this nature, the outer descriptor type for this polymer is <code>$</code>, and the outer descriptors read</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>A([$1[Inner]1])R(A'[$1[Inner]1])(A[$1[Inner]2])A'[$1[Inner]2]
+</code></pre>
+<blockquote>
+<p>Now, the inner layer descriptor depends on the exact connectivity pattern between the repeating units. Consider the three different cases:</p>
+
+<ol>
+<li>Connections between A-A, A-A’, and A’-A’ are all allowed</li>
+<li>Connections between A-A and A’-A’ are allowed, but A-A’ is not allowed</li>
+<li>Only connection between A-A’ is allowed, connections between A-A, A’-A’ not allowed</li>
+</ol>
+
+<p>For the first case, the connectivity can be described by a single AA type connection among the group of A and A&#39;, leading to the overall bonding descriptor</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>A([$1[$1]1])R(A'[$1[$1]1])(A[$1[$1]2])A'[$1[$1]2]
+</code></pre>
+<blockquote>
+<p>For the second case, As and A&#39;s can still form AA type connections within themselves, but cross-connections are disallowed. Therefore, the inner layer must be described by two orthogonal AA type connections, leading to the BigSMILES</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>A([$1[$1]1])R(A'[$1[$2]1])(A[$1[$1]2])A'[$1[$2]2]
+</code></pre>
+<blockquote>
+<p>For the last case, A and A&#39; form conjugate AB type bonds; therefore, the inner layer reads</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>A([$1[&lt;1]1])R(A'[$1[&gt;1]1])(A[$1[&lt;1]2])A'[$1[&gt;1]2]
+</code></pre>
+<p>The BigSMILES syntax up to this point assumes that neighboring repeating units are always connected through a single pair of atoms. However, for some materials, such as ladder polymers, this condition does not hold. To represent ladder polymers or other polymers with multiple connections between a single pair of repeating units, the bonding descriptors are nested by the following syntax:</p>
+
+<p><code>ladder_bond_descriptor = &#39;[&#39; + outer_descriptor + &#39;[&#39; + inner_descriptor + &#39;]&#39; + group_id + &#39;]&#39;</code></p>
+
+<p>The bonding descriptor for multiatom connections is composed of four components:</p>
+
+<ol>
+<li>the outmost square brackets,</li>
+<li>the <code>group_id</code> of multi-atom bonds, an integer label for specifying the grouping of bonding descriptors within a repeat unit</li>
+<li><code>outer_descriptor</code>, the outer bonding descriptor with syntax 
+
+<ul>
+<li><code>outer_descriptor = outer_descriptor_type + outer_descriptor_id</code></li>
+</ul></li>
+<li><code>inner_descriptor</code>, the inner bonding descriptor with syntax
+
+<ul>
+<li><code>inner_descriptor = inner_descriptor_type + inner_descriptor_id</code></li>
+</ul></li>
+</ol>
+<h3 id='grouping-of-bonding-descriptors-and-the-outer-bonding-descriptor'>Grouping of Bonding Descriptors and the Outer Bonding Descriptor</h3>
+<p>To describe multi-atom bonds, the atoms with bonding descriptors within the same repeat unit must first be divided into groups. Each group corresponds to the collection of atoms that always connect to the same neighboring repeating unit. The grouping is specified by the <code>group_id</code> parameter. Note that since <code>group_id</code> is used to group atoms/descriptors within the same repeat unit, the labels can be reused for groups on distinct repeating units. </p>
+
+<p>Once the grouping is established, dimers and higher order fragments could be constructed by joining multiple repeat units. To describe the connectivity patterns that are permissible, the <em>outer</em> bonding descriptor is used. This outer bonding descriptor is analogous to the bonding descriptor found in normal non-ladder connections. The only difference between the ladder and non-ladder bonding descriptors is that the non-ladder descriptors describe the connectivity pattern of a single bond between two repeat units, whereas the ladder version describes the connectivity pattern of a group of bonds between two repeat units. It should be emphasized that since the entire group are collectively described by the same outer descriptor, individual bonding descriptors within the same group should always share the same outer descriptor type and the same outer descriptor id. </p>
+<h3 id='inner-bonding-descriptor'>Inner Bonding Descriptor</h3>
+<p>While the outer bonding descriptor specified how group of bonds are established between repeat units, how each individual atom within the two groups are actually connected to form a proper ladder bond have yet to be specified. This information is encoded within a second bonding descriptor: the inner bonding descriptor. Similar to the outer descriptor, the inner bonding descriptor is also given by the same syntax as the usual bonding descriptor.</p>
+
+<aside class="warning">
+The terminal bonding descriptor syntax has been updated and is different from the <a href="https://pubs.acs.org/doi/10.1021/acscentsci.9b00476">version 1.0 presented in ACS Central Science</a>.
+</aside>
+<h1 id='special-topics'>Special Topics</h1><h2 id='tacticity'>Tacticity</h2>
+<blockquote>
+<p>To demonstrate how this notation can be used to specify tacticity, consider a polypropylene (PP) with pure head-to-tail configuration as example. </p>
+
+<p>Atactic PP reads</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>CC{[&gt;][&lt;]CC(C)[&gt;][&lt;]}CC(C)=C
+</code></pre>
+<blockquote>
+<p>Meanwhile, isotactic PP synthesized with Ziegler-Natta catalyst TiCl<sub>3</sub> and Al(C<sub>2</sub>H<sub>5</sub>)<sub>2</sub>Cl and terminated through β-hydrogen elimination or β-hydrogen transfer to monomer is represented by </p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>C{[&gt;][&lt;]C[C@@H](C)[&gt;][&lt;]}CC(C)=C
+</code></pre>
+<blockquote>
+<p>whereas syndiotactic PP synthesized with VCl<sub>4</sub> and Al(C<sub>2</sub>H<sub>5</sub>)<sub>2</sub>Cl as catalyst reads</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>CC{[&gt;][&lt;]C[C@@H](C)C[C@H](C)[&gt;];[&lt;]C=CC,[&lt;]C[C@H](C)C=CC[]}
+</code></pre>
+<blockquote>
+<p>In the last example, the polymer is assumed to terminate through α-hydrogen elimination or α-hydrogen transfer to monomer, which leads to two possible end groups. The first possibility being that the polymer has an overall even number of carbon atoms along the backbone, whereas the second corresponds to the polymer having odd number of carbon atoms.</p>
+</blockquote>
+
+<p>Stereochemistry and chirality is supported by the <code>@</code> and <code>@@</code> modifiers provided by SMILES. </p>
+
+<p>In general, the tacticity of a polymer include the following cases:</p>
+
+<ol>
+<li>Atactic:<br>
+The polymer is assumed to be atactic if no explicit chirality specification is provided. </li>
+<li>Isotactic:<br>
+To specify an isotactic polymeric segment, the repeat unit should be modified with either the <code>@</code> or <code>@@</code> symbols to enforce the stereochemistry. For instance, the repeat unit of the following polymer reads<br>
+<img src="images/tacticity1-55846e7f.png" width="20%;" /><br>
+<code>[&lt;]C[C@@H](C)[&gt;]</code><br>
+whereas its stereoisomer reads<br>
+<img src="images/tacticity2-88c8809c.png" width="20%;" /><br>
+<code>[&lt;]C[C@H](C)[&gt;]</code><br></li>
+<li>Syndiotactic:<br>
+To specify an syndiotactic polymer, the correlation between adjacent repeat units must be specified. This could be achieved by using the dimer of repeat units, or dyads, as the basic repeat unit instead:<br>
+<img src="images/tacticity3-38397677.png" width="20%;" /><br>
+<code>[&lt;]C[C@@H](C)C[C@H](C)[&gt;]</code></li>
+</ol>
+
+<p>Note that here the <code>&lt;</code> ,<code>&gt;</code> bonding descriptors are used instead of <code>$</code> to restrict flipping of the orientation of the repeating units; this effectively specifies a purely head-to-tail configuration. </p>
+<h2 id='geometric-isomers'>Geometric Isomers</h2>
+<p>SMILES denote the geometric isomers adjacent to double bonds with the <code>\</code> and <code>/</code> bonding symbols. In BigSMILES, these notations are used to describe the exact structure for isomers.</p>
+
+<p>Consider poly(ethyne), the polymer can be in one of the three states:</p>
+
+<ol>
+<li>Unspecified isomeric state:<br>
+If the isomeric state is not explicitly known, the normal single bonds are used to indicate that the isomeric state is unspecified<br>
+<code>[$]-C=C-[$]</code></li>
+<li>Trans isomer:<br>
+<img src="images/trans-0b3a97b1.png" width="30%;" /><br>
+The trans isomer can be denoted by the following repeat unit<br>
+<code>[$1]/C=C/[$1]</code> or <code>[$1]\C=C\[$1]</code></li>
+<li>Cis isomer:<br>
+<img src="images/cis-16afa73b.png" width="30%;" /><br>
+The cis isomer can be denoted by the following repeat unit<br>
+<code>[$1]\C=C/[$1]</code> or <code>[$1]/C=C\[$1]</code></li>
+</ol>
+
+<p>As illustrated in the following figure, since in BigSMILES the process of concatenating two atoms with matching bonding descriptors is equivalent to forming a connection between the corresponding molecular graphs, therefore, even for bonding descriptors with leading bonds that are not identical, for instance,</p>
+
+<p><code>...C=C/[$]</code> and <code>[$]\C=C...</code>  </p>
+
+<p>or </p>
+
+<p><code>...C=C/[$]</code> and <code>[$]-C-C...</code></p>
+
+<p>the bonding descriptors are still considered consistent.</p>
+
+<p><img src="images/geometric1-bab24e56.png" style="zoom:30%;" /></p>
+
+<p>In general, as long as the bond order for the bonds leading to the bonding descriptors matches, they are considered consistent.</p>
+<h2 id='polyelectrolytes'>Polyelectrolytes</h2>
+<blockquote>
+<p>Another example of a charged polymer is the quaternized 4-vinylpyridine polymer</p>
+
+<p><img src="images/polyelectrolyte1-efb20292.png" width="25%;" /></p>
+
+<p>synthesized by Obermeyer et al. (<em>Soft Matter</em>,<em>12</em>(15), 3570-3581, <strong>2016</strong>). </p>
+
+<p>The BigSMILES for the polymer reads</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>{[][$]CC(c1ccncc1)[$],[$]CC(c1cc[n+](C)cc1)[$].[I-][]}
+</code></pre>
+<p>In SMILES, there is no explicit notation for ionic bonds, and ionic species are expressed as separate compounds and joined together into a SMILES string with the dot <code>.</code> symbol. For example, sodium chloride reads</p>
+
+<p><code>[Na+].[Cl-]</code></p>
+
+<p>To denote polyelectrolytes, the repeat units are written in a similar fashion. For instance, the repeat unit for poly(methacrylic acid, sodium salt) reads</p>
+
+<p><code>[$]CC(C)(C(=O)[O-])[$].[Na+]</code></p>
+
+<p>and the polymer reads</p>
+
+<p><code>{[][$]CC(C)(C(=O)[O-])[$].[Na+][]}</code></p>
+
+<p>By explicitly including both the charged repeat unit and its counter-ion within the BigSMILES repeat unit, the overall neutrality of the whole polymer is guaranteed.</p>
+
+<p>Similarly, for other strong polyelectrolytes, such as poly(sodium styrene sulfonate), the BigSMILES repeat unit is written in a similar way</p>
+
+<p><code>{[][$]CC(c1ccc(S(=O)(=O)[O-])cc1)[$].[Na+])[]}</code></p>
+
+<p>For weak polyelectrolytes, the partial dissociation can be represented by including both the dissociated and undissociated repeating units within the list; for example, poly(acrylic acid) can be represented as</p>
+
+<p><code>{[][$]CC(C(=O)O)[$],[$]CC(C(=O)[O-])[$].[OH3+][]}</code></p>
+
+<p>By explicitly including the different repeating unit-counter-ion pairs, this representation can also be used to denote polyelectrolytes with multiple counter-ions. </p>
+<h2 id='branched-polymers-and-polymer-networks'>Branched Polymers and Polymer Networks</h2>
+<blockquote>
+<p>In general, a branched polymer synthesized with A and B type precursors will read</p>
+
+<p><img src="images/branch4-f5d63ed5.png" width="70%;" /></p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>{[][&lt;][#A][#R][#A][&lt;],[&gt;][#B][#R']([#B][&gt;])([#B][&gt;])[#B][&gt;][]}
+</code></pre>
+<blockquote>
+<p>where <code>#A</code>, <code>#B</code>, <code>#R</code> and <code>#R&#39;</code> are placeholders for reactive and linking chemical fragments.</p>
+
+<p>Examples of this type of polymer include end-linked elastomers, gels and epoxide networks.</p>
+
+<p>As discussed in detail in the end group section, for these randomly branched networks, it is necessary to include implicit end groups to fully cap the entire polymer. </p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>{[][&lt;][#A][#R][#A][&lt;],[&gt;][#B][#R']([#B][&gt;])([#B][&gt;])[#B][&gt;];[&gt;][#E1],[&lt;][#E2][]}
+</code></pre>
+<blockquote>
+<p>where <code>#E1</code> and <code>#E2</code> are placeholders for end groups attached to <code>#A</code> and <code>#B</code> ends.</p>
+</blockquote>
+
+<p>By having repeating units with more than two bonds to other units, the syntax of BigSMILES naturally extends from linear polymers to branched polymers and polymer networks. For example, a branched poly(ethylene) can be encoded as</p>
+
+<p><code>{[][$]CC[$],[$]CC([$])[$],[$]C([$])C([$])[$][]}</code></p>
+
+<p>where the first repeat unit represent the linear unit, and the latter two are repeat units with functionality of three and four.</p>
+
+<p>Similar syntax can also be used to represent other branching structures, such as hyperbranched polymers,  dendrimers or even polymer networks and gels. For instance, a polyethylenimine hyperbranched polymer reads</p>
+
+<p><img src="images/branch3-a0a4b9e9.png" width="50%;" /></p>
+
+<p><code>{[][&lt;]CCN([&gt;])[&gt;][]}</code></p>
+
+<p>Moreover, polymer networks can also be encoded by with similar strategy. For example, poly(1,3-butadiene) rubber vulcanized by sulfur bridges reads</p>
+
+<p><img src="images/branch5-80b6d803.png" width="70%;" /></p>
+
+<p><code>{[][$]CC=CC[$],[$]CC([&lt;])C([&lt;])C[$],[&gt;]{[$][$]S[$][$]}[&gt;][]}</code></p>
+<h2 id='dynamic-topological-and-physical-bonds'>Dynamic, Topological and Physical Bonds</h2>
+<p>The same syntax can also be used to represent several other types of polymer networks or structures beyond the scope of traditional chemical networks, including vitrimers, double network gels (DN gels), poly(metal organic cage) (polyMOC) and poly(metal organic framework) (polyMOF) networks. </p>
+<h3 id='vitrimers'>Vitrimers</h3>
+<p>For vitrimers, since all bonds between the components are covalent, and local connectivity rules are well-defined, they can be simply encoded with the same syntax as usual chemical networks shown in the previous sections. </p>
+
+<p>However, it should be noted that the dynamic natures of the bonds cannot be captured by the static representation.</p>
+<h3 id='double-network-dn-gels'>Double Network (DN) Gels</h3>
+<p>For DN gels, the coexisting molecules that are not covalently bonded can be represented by a set of repeating units with orthogonal bonding types. For example, denoting the repeating unit of the first network by A and the second by B, a simple (yet unrealistic) DN gel can be encoded as</p>
+
+<p><code>{[][$1]A([$1])[$1],[$2]B([$2])[$2][]}</code></p>
+
+<p>Meanwhile, it is worth noting that the topological bonds are beyond the current design of BigSMILES language, and cannot be faithfully reflected.</p>
+<h3 id='polymocs-and-polymof'>PolyMOCs and PolyMOF</h3>
+<blockquote>
+<p>As an example, consider the M<sub>2</sub>L<sub>4</sub> polyMOC synthesized by Zhukhovitskiy et al. </p>
+
+<p><img src="images/network1-d0976d09.png" width="70%;" /></p>
+
+<p>can be represented by the BigSMILES</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>{[][&gt;]COC(=O){[$][$]COC[$][$]}C(=O)OC[&gt;],
+c1([&lt;])cc([#L]2)cc([#L]3)c1.c4([&lt;])cc([#L]5)cc([#L]6)c4.
+c7([&lt;])cc([#L]8)cc([#L]9)c7.C%10([&lt;])cc([#L]%11)cc([#L]%12)c%10.
+[Pd++]258%11.[Pd++]369%12}.{#L=c(c1)cccn1}
+</code></pre>
+<p>If the single bond notation is extended to incorporate also the coordinate bonds, metal organic networks could also be encoded using the BigSMILES. </p>
+
+<p>However, while BigSMILES could capture the local connectivity pattern for MOFs, the local nature of BigSMILES means that large scale ordering, such as the crystalline structure of MOFs, could not be captured. Furthermore, the SMILES <code>@</code> and <code>@@</code> syntax for chirality is insufficient to fully specify the three-dimensional structure of a metal center that has more than four ligands.</p>
+<h3 id='other-networks'>Other Networks</h3>
+<p>Besides the discussed networks, there are still many other types of polymer networks, including physical networks or topological network such as the slide-ring gel. Currently, BigSMILES do not support most of these non-covalent networks. However, as SMILES is further developed, support for these more complex structures may be possible in future revisions of BigSMILES.</p>
+<h2 id='macrocycles'>Macrocycles</h2>
+<blockquote>
+<p>Consider a polystyrene ring synthesized through alkyne azide click chemistry, since rings and cycles within repeating units do not extend beyond a single repeating unit, the macrocycle associated with the ring polymer can be treated with the usual SMILES ring closure syntax:</p>
+
+<p><img src="images/macrocycle1-2ce7cab0.png" width="70%;" /></p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>S1C(c2ccccc2){[$][$]CC(c1ccccc1)[$][$]}C(=O)OC(=C3)N=NN3CC(O)COC(=O)C(C)C1
+</code></pre>
+<blockquote>
+<p>Note that the integer identifier that was used within the repeating units for ring closure is considered to be independent of any ring closure ID that was used in other parts of the BigSMILES string.</p>
+</blockquote>
+<h3 id='well-defined-macrocycles'>Well-defined Macrocycles</h3>
+<p>For well-defined macrocycles, such as the cycle structures in ring polymers, the macrocycles are encoded using the usual syntax for describing cycles in SMILES. This is illustrated by the first example in the right panel.</p>
+<h3 id='implicit-ring-polymers'>Implicit Ring Polymers</h3>
+<blockquote>
+<p>Consider a ring polymer synthesized with ring expansion metathesis polymerization (REMP)</p>
+
+<p><img src="images/macrocycle2-e9630000.png" width="30%;" /></p>
+
+<p>To denote a ring polymer, the ring notation must be explicitly invoked</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>C1CCC{[$1][$1]=CCCCCCCC=[$1][$1]}CCCC1
+</code></pre>
+<blockquote>
+<p>However, the uncapped linear polymer </p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>{[][$1]=CCCCCCCC=[$1][]}
+</code></pre>
+<blockquote>
+<p>also implicitly include similar ring polymers.</p>
+</blockquote>
+
+<p>It should be emphasized that for a linear polymer of the form </p>
+
+<p><code>{[][$][#RepUnit][$][]}</code></p>
+
+<p>although there is no explicit reference to any cycle, since a ring polymer is also a valid outcome of the connectivity pattern, the molecular ensemble would implicitly include both the uncapped linear fragments and also ring polymers without any open ends. This is meant to reflect the potential ring-chain formation competition that naturally occurs during polymerization. </p>
+<h3 id='random-cycles'>Random Cycles</h3>
+<p>For stochastic objects representing branching polymers, products with random cyclization are also included within the ensemble of possible structures. This looping structure is currently not explicitly presented within the BigSMILES representation, because each cycle requires indexing in the SMILES language, and it is impossible to fully track such random cyclization explicitly. Rather, the possibility of this type of random macrocycle formation is implicitly included through expressing the rules of connectivity that allow for the enumeration of these macrocycles.</p>
+<h1 id='version-history'>Version History</h1><h2 id='version-1-1'>version-1.1</h2><h3 id='date'>Date</h3>
+<p>November 11, 2019</p>
+<h3 id='major-updates'>Major Updates</h3>
+<p>Made changes to the bonding descriptor syntax:</p>
+
+<ol>
+<li>Changed bonding descriptor from <code>descriptor_type + bond_type + descriptor_id</code> to <code>&#39;[&#39; + descriptor_type +  descriptor_id  +  &#39;]&#39;</code> and moves bonding symbol out of the descriptors
+
+<ul>
+<li>Made descriptors completely identical to atoms in terms of syntax</li>
+<li>Resolve incompatibility with SMILES quadruple bonds <code>$</code></li>
+<li>Resolve potential conflict with reaction SMILES <code>&gt;</code></li>
+</ul></li>
+<li><p>Changed ladder bonding descriptor syntax: added <code>group_id</code> </p>
+
+<ul>
+<li>Original syntax may lead to ambiguous semantics</li>
+</ul></li>
+<li><p>Changed terminal bonding descriptor syntax</p></li>
+</ol>
+
+<ul>
+<li>To eliminate ambiguity, the terminal bonding descriptors are always required, even if it is empty </li>
+</ul>
+<h2 id='version-1-0'>version-1.0</h2><h3 id='date-2'>Date</h3>
+<p>September 12, 2019</p>
+<h3 id='major-update'>Major Update</h3>
+<p>BigSMILES line notation published on <a href="https://pubs.acs.org/doi/10.1021/acscentsci.9b00476">ACS Central Science</a></p>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="plaintext">BigSMILES Examples</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
