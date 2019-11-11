@@ -6,9 +6,9 @@ BigSMILES is an open-source effort that aims to lay down necessary infrastructur
 
 Currently, the BigSMILES project is comprised of three major components:
 
-1. [**BigSMILES line notation**](docs/line_notation.html)  
+1. [**BigSMILES line notation**](https://olsenlabmit.github.io/BigSMILES/docs/line_notation.html)  
    an extension to the popular SMILES line notation that provides support over general polymeric and macromolecular systems
-2. [**BigSMILES data format**](docs/DataFormat.html)  
+2. [**BigSMILES data format**](https://olsenlabmit.github.io/BigSMILES/docs/DataFormat.html)  
    an data format for reporting polymer characterization under the framework of the BigSMILES line notation
 3. **Open-source software**   
    associated with the line notation and data format. current tools include:

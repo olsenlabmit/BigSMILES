@@ -5,7 +5,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - plaintext: BigSMILES Examples
 
 toc_footers:
-  - <a href='index.html'>BigSMILES Project</a>
+  - <a href='https://olsenlabmit.github.io/BigSMILES/'>BigSMILES Project</a>
   - <a href='line_notation.html'>BigSMILES Line Notation</a>
   - <a href='DataFormat.html'>BigSMILES Data Format</a>
   - <a href='https://github.com/olsenlabmit/bigSMILES'>GitHub</a>
@@ -503,7 +503,7 @@ each fragment definition is enclosed within a pair of curly brackets, and each d
 
 `BigSMILES_string + '[' + '#' + fragment_name + ']' + BigSMILES_string + '.' + '{' + '#' + fragment_name + '=' + BigSMILES_string + '}'`
 
-The only exception for the need of such explicit definition is when the placeholder is one of the common repeat units that has been defined in this [repository](#). These fragment names can be used without further re-definition.
+The only exception for the need of such explicit definition is when the placeholder is one of the common repeat units that has been defined in this [repository](https://olsenlabmit.github.io/BigSMILES/docs/Common_Repeat_Unit_List.md). These fragment names can be used without further re-definition.
 
 ## Ladder Polymers
 
@@ -850,8 +850,9 @@ Made changes to the bonding descriptor syntax:
    * Resolve incompatibility with SMILES quadruple bonds `$`
    * Resolve potential conflict with reaction SMILES `>`
 2. Changed ladder bonding descriptor syntax: added `group_id` 
-   * Original syntax may lead to ambiguous semantics
-
+   
+* Original syntax may lead to ambiguous semantics
+   
 3. Changed terminal bonding descriptor syntax
 
    * To eliminate ambiguity, the terminal bonding descriptors are always required, even if it is empty 

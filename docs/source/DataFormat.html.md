@@ -5,7 +5,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - json: BigSMILES Data
 
 toc_footers:
-  - <a href='index.html'>BigSMILES Project</a>
+  - <a href='https://olsenlabmit.github.io/BigSMILES/'>BigSMILES Project</a>
   - <a href='line_notation.html'>BigSMILES Line Notation</a>
   - <a href='DataFormat.html'>BigSMILES Data Format</a>
   - <a href='https://github.com/olsenlabmit/bigSMILES'>GitHub</a>
@@ -224,7 +224,6 @@ The log consists of an array of *log objects*. Each log object is a JSON object 
 array of *log object*
 
 <aside class="notice">Using names as author identifiers are strongly discouraged, because they are often not unique and difficult to track. Unique identifiers such as ORCID are preferred.</aside>
-
 # Data and the Data Object
 
 > The data objects are embedded within the main JSON object
@@ -354,7 +353,6 @@ data_obj =
 Characterization on measurable properties are logged under the corresponding array within the data object. For each measurable property, the set of required and optional fields are slightly different. Please click on the name of the property in the table to view the exact syntax.
 
 <aside class="warning">Currently, properties such as tacticity, head-to-tail configuration and composition are not supported. These are actively under development and should be available soon.</aside>
-
 | Property              | Description                                                  |
 | --------------------- | ------------------------------------------------------------ |
 | [D](#d)               | Dispersity                                                   |
@@ -372,7 +370,6 @@ Characterization on measurable properties are logged under the corresponding arr
 
 <aside class="warning">BigSMILES data format is designed specifically for describing the structural features of polymers. Therefore, properties, such as the viscosity, that are not directly relevant to the structure should <b>NOT</b> be included within the data objects.</aside>
 <aside class="warning">Unlike the metadata list, to ensure maximal compatibility, incorporating entries not contained within the supported properties list is strongly discouraged. If there are missing fields that you consider necessary, please submit a modification or update request, and we will incorporate the new entry into the standard list as soon as possible.</aside>
-
 ## Model Dependent Parameters
 
 > The kinetic object can contain any user defined parameters that are relevant to the specific kinetic model. The only requirement is that the object contain either a description that details the exact definitions of each parameter and how they work with a specific kinetic model, or a reference to another document that contains such information.

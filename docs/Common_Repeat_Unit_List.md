@@ -1,7 +1,7 @@
 # List of common BigSMILES repeat units 
-This document holds a list of common repeat units and their equivalent SMILES string replacements that could be directly used within BigSMILES without additional explicit definition.
+This document holds a list of common repeat units and their equivalent SMILES string replacements that could be directly used within BigSMILES without additional explicit definition. For details on the syntax of BigSMILES line notation, please refer to the [documentation](https://olsenlabmit.github.io/BigSMILES/docs/line_notation.html#the-bigsmiles-line-notation).
 
-To contribute to the list, please submit a pull request. The modifications will be accepted after review.
+To contribute to the list, please submit a comment/issue. The modifications will be accepted after review.
 
 ## BigSMILES Fragment Naming Syntax
 1. The names of the fragments should consist of ASCII symbols enclosed between a pair of square brackets.
