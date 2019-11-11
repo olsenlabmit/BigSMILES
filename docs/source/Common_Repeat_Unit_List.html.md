@@ -28,7 +28,7 @@ To contribute to the list, please submit a comment/issue. The modifications will
 4. SMILES strings for the repeat units need not conform to Canonical SMILES syntax; however, as they are molecular fragments to be embedded within BigSMILES strings, direct concatenation of the repeat units should yield valid oligomer structures.  
 For example, propylene repeat unit can either be written as CC(C) or C(C)C but not CCC, because direct concatenation of CCC would yield  
 
-   >...-CCC-CCC-CCC-...  
+   `...-CCC-CCC-CCC-...  `
    
    which is not polyproplyene.  
    For SMILES syntax, please refer to the [Daylight Chemical Information System documentation](https://www.daylight.com/dayhtml/doc/theory/theory.smiles.html)
