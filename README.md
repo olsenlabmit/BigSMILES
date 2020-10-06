@@ -1,10 +1,10 @@
-# \{:\)\} The BigSMILES Project 
+# \{:\)\} The BigSMILES/PolyDAT Project 
 
-## What is BigSMILES?
+## What is BigSMILES/PolyDAT project?
 
-BigSMILES is an open-source effort that aims to lay down necessary infrastructure for polymer informatics. The goal of the BigSMILES project is to provide a series of standards and software that facilitate the communication between chemists, material scientists, cheminformatics researchers and computer scientists, and ultimately leading to more rapid development data-driven polymer research.
+The BigSMILES/PolyDAT project is an open-source effort that aims to lay down necessary infrastructure for polymer informatics. The goal of this project is to provide a series of standards and software that facilitate the communication between chemists, material scientists, cheminformatics researchers and computer scientists, and ultimately leading to more rapid development data-driven polymer research.
 
-Currently, the BigSMILES project is comprised of three major components:
+Currently, the project is comprised of three major components:
 
 1. [**BigSMILES line notation**](https://olsenlabmit.github.io/BigSMILES/docs/line_notation.html)  
    an extension to the popular SMILES line notation that provides support over general polymeric and macromolecular systems
