@@ -8,12 +8,12 @@ Currently, the BigSMILES project is comprised of three major components:
 
 1. [**BigSMILES line notation**](https://olsenlabmit.github.io/BigSMILES/docs/line_notation.html)  
    an extension to the popular SMILES line notation that provides support over general polymeric and macromolecular systems
-2. [**BigSMILES data format**](https://olsenlabmit.github.io/BigSMILES/docs/DataFormat.html)  
-   an data format for reporting polymer characterization under the framework of the BigSMILES line notation
+2. [**PolyDAT data schema**](#)  
+   a data schema for reporting polymer characterization (paper, documentation and tutorials coming soon!)
 3. **Open-source software**   
    associated with the line notation and data format. current tools include:
    * [BigSMILES Builder](https://olsenlabmit.github.io/BigSMILES_builder/): a graphical tool for constructing BigSMILES strings
-   * [BigSMILES Data Form](https://olsenlabmit.github.io/BigSMILES_DataForm/): a form for generating BigSMILES data files
+   * [PolyDAT Data Form](https://olsenlabmit.github.io/PolyDAT-form/index.html): a form for generating BigSMILES data files
 
 
 
