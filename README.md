@@ -13,7 +13,9 @@ Currently, the project is comprised of three major components:
 3. **Open-source software**   
    associated with the line notation and data format. current tools include:
    * [BigSMILES Builder](https://olsenlabmit.github.io/BigSMILES_builder/): a graphical tool for constructing BigSMILES strings
+      * [video tutorial](#)
    * [PolyDAT Data Form](https://olsenlabmit.github.io/PolyDAT-form/index.html): a form for generating BigSMILES data files
+      * [video tutorial](#)
 
 
 
